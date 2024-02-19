@@ -1,0 +1,38 @@
+name: Check
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Extract Java Version
+        run: |
+          JAVA_VERSION=$(grep 'java-sdk' gradle/libs.versions.toml | awk -F= '{print $2}' | tr -d '"' | xargs)
+          echo "JAVA_VERSION=$JAVA_VERSION" >> $GITHUB_ENV
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{ env.JAVA_VERSION }}
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v2
+      - name: Setup Gradle and execute check task
+        uses: gradle/actions/setup-gradle@v3
+        id: gradle
+        with:
+          # Only write to the cache for builds on the 'main' branch.
+          # Builds on other branches will only read existing entries from the cache.
+          gradle-home-cache-cleanup: true
+          cache-read-only: ${{ github.ref != 'refs/heads/main' }}
+          arguments: check --scan
+      - name: Run Unit Tests
+        run: ./gradlew test --scan
