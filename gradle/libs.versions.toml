@@ -49,7 +49,7 @@ square-moshi = "1.15.1"
 square-okhttp = "4.12.0"
 square-retrofit = "2.9.0"
 square-sqlDelight = "1.5.5"
-compose-BOM = "2024.01.00"
+compose-BOM = "2024.02.00"
 constraintLayoutCommpose = "1.0.1"
 
 # new
