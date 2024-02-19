@@ -11,7 +11,7 @@
   "platformAutomerge": false,
   "packageRules": [
     {
-      "updateTypes": [
+      "matchUpdateTypes": [
         "minor",
         "patch",
         "pin",
