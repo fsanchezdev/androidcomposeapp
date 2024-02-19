@@ -1,18 +1,25 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:best-practices"
   ],
-  "automerge": true,
-  "platformAutomerge": true,
+  "baseBranches": [
+    "main",
+    "feature/update-renovate.json"
+  ],
+  "automerge": false,
+  "platformAutomerge": false,
   "packageRules": [
     {
-      "matchPackagePatterns": [
-        "^org.jetbrains.kotlin",
-        "^com.google.devtools.ksp",
-        "^androidx.compose.compiler"
+      "updateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
       ],
-      "groupName": "kotlin"
+      "groupName": "dependenciesMinorPatchAndDigestUpdates",
+      "groupSlug": "dependencies-minor-patch-digest-updates"
     }
-  ]
+  ],
+  "separateMajorMinor": false
 }
