@@ -22,24 +22,24 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
 
-  @get:Rule
-  internal val rule = createComposeRule()
+    @get:Rule
+    internal val rule = createComposeRule()
 
-  @Test
-  fun useAppContext() {
-    // Context of the app under test.
-    val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-    assertEquals("com.fsanchezdev.androidcomposeapp.app", appContext.packageName)
-  }
+    @Test
+    fun useAppContext() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("com.fsanchezdev.androidcomposeapp.app", appContext.packageName)
+    }
 
-  @Test
-  fun appLaunchesAndLogInButtonIsVisible() {
-    launchActivity<MainActivity>()
-    rule.onNodeWithContentDescription("Insert name")
-      .performTextInput("Mario")
-    rule.onNodeWithContentDescription("Greet button")
-      .performClick()
-    rule.onNodeWithContentDescription("Greeting")
-      .assertTextEquals("Hello, Mario")
-  }
+    @Test
+    fun appLaunchesAndLogInButtonIsVisible() {
+        launchActivity<MainActivity>()
+        rule.onNodeWithContentDescription("Insert name")
+            .performTextInput("Mario")
+        rule.onNodeWithContentDescription("Greet button")
+            .performClick()
+        rule.onNodeWithContentDescription("Greeting")
+            .assertTextEquals("Hello, Mario")
+    }
 }
