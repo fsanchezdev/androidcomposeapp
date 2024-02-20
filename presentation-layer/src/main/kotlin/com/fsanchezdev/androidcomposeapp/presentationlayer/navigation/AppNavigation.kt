@@ -9,13 +9,13 @@ import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.navigation.Fe
 
 @Composable
 public fun AppNavigation() {
-  val navController = rememberNavController()
-  NavHost(
-    navController = navController,
-    startDestination = FeatureNavigation.ROUTE,
-    modifier = Modifier.fillMaxSize(),
-    route = "mainGraph"
-  ) {
-    FeatureNavigation.navGraphBuilder(this)
-  }
+    val navController = rememberNavController()
+    NavHost(
+        navController = navController,
+        startDestination = FeatureNavigation.ROUTE,
+        modifier = Modifier.fillMaxSize(),
+        route = "mainGraph"
+    ) {
+        FeatureNavigation.navGraphBuilder(this)
+    }
 }

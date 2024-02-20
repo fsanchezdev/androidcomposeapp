@@ -1,22 +1,22 @@
 dependencyResolutionManagement {
-  repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-  repositories {
-    gradlePluginPortal()
-    google {
-      content {
-        includeGroupByRegex("android.arch.*")
-        includeGroupByRegex("androidx.*")
-        includeGroupByRegex("com.android.*")
-        includeGroupByRegex("com.google.*")
-      }
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        gradlePluginPortal()
+        google {
+            content {
+                includeGroupByRegex("android.arch.*")
+                includeGroupByRegex("androidx.*")
+                includeGroupByRegex("com.android.*")
+                includeGroupByRegex("com.google.*")
+            }
+        }
+        mavenCentral()
     }
-    mavenCentral()
-  }
-  versionCatalogs {
-    create("libs") {
-      from(files("../gradle/libs.versions.toml"))
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
     }
-  }
 }
 
 include("build-conventions")
