@@ -11,20 +11,20 @@ import org.junit.Test
 
 internal class FeatureScreenIntegrationTest {
 
-  @get:Rule
-  internal val rule = createComposeRule()
+    @get:Rule
+    internal val rule = createComposeRule()
 
-  @Test
-  internal fun buttonSendsTextFieldContentToGreetHandler() {
-    rule.setContent {
-      FeatureScreen()
+    @Test
+    internal fun buttonSendsTextFieldContentToGreetHandler() {
+        rule.setContent {
+            FeatureScreen()
+        }
+
+        rule.onNodeWithContentDescription("Insert name")
+            .performTextInput("Mario")
+        rule.onNodeWithContentDescription("Greet button")
+            .performClick()
+        rule.onNodeWithContentDescription("Greeting")
+            .assertTextEquals("Hello, Mario")
     }
-
-    rule.onNodeWithContentDescription("Insert name")
-      .performTextInput("Mario")
-    rule.onNodeWithContentDescription("Greet button")
-      .performClick()
-    rule.onNodeWithContentDescription("Greeting")
-      .assertTextEquals("Hello, Mario")
-  }
 }
