@@ -49,14 +49,13 @@ dependencyResolutionManagement {
 }
 
 plugins {
-  // `gradle-enterprise` remove?
+  `gradle-enterprise`
   id("conventions")
 }
-/*
+
 gradleEnterprise {
   buildScan {
     termsOfServiceUrl = "https://gradle.com/terms-of-service"
     termsOfServiceAgree = "yes"
   }
 }
-*/
