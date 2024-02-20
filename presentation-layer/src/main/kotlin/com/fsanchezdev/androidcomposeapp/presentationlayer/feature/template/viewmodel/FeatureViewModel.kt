@@ -11,18 +11,18 @@ import kotlinx.coroutines.flow.update
 
 @HiltViewModel
 internal class FeatureViewModel @Inject constructor(
-  private val savedStateHandle: SavedStateHandle
+    private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-  private val _state =
-    MutableStateFlow(FeatureState())
-  val state = _state.asStateFlow()
+    private val _state =
+        MutableStateFlow(FeatureState())
+    val state = _state.asStateFlow()
 
-  fun greet(name: String) {
-    _state.update {
-      it.copy(
-        greeting = "Hello, $name"
-      )
+    fun greet(name: String) {
+        _state.update {
+            it.copy(
+                greeting = "Hello, $name"
+            )
+        }
     }
-  }
 }

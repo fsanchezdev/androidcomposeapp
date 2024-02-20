@@ -10,17 +10,17 @@ import org.junit.Test
 
 internal class FeatureViewModelTest {
 
-  @Test
-  fun `greets the person with their name`() = runTest {
-    val vm =
-      FeatureViewModel(SavedStateHandle())
-    vm.state.test {
-      assertEquals(FeatureState(), awaitItem())
-      vm.greet("Mario")
-      assertEquals(
-        FeatureState(greeting = "Hello, Mario"),
-        awaitItem()
-      )
+    @Test
+    fun `greets the person with their name`() = runTest {
+        val vm =
+            FeatureViewModel(SavedStateHandle())
+        vm.state.test {
+            assertEquals(FeatureState(), awaitItem())
+            vm.greet("Mario")
+            assertEquals(
+                FeatureState(greeting = "Hello, Mario"),
+                awaitItem()
+            )
+        }
     }
-  }
 }

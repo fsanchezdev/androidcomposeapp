@@ -1,55 +1,55 @@
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-  alias(libs.plugins.android.library)
-  alias(libs.plugins.kotlin.android)
-  id(libs.plugins.dagger.hilt.get().pluginId)
-  id("conventions.android")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    id(libs.plugins.dagger.hilt.get().pluginId)
+    id("conventions.android")
 }
 
 android {
-  namespace = libs.versions.nameSpacePresentation.get()
-  compileSdk = 34
+    namespace = libs.versions.nameSpacePresentation.get()
+    compileSdk = 34
 
-  defaultConfig {
-    minSdk = 29
+    defaultConfig {
+        minSdk = 29
 
-    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    consumerProguardFiles("consumer-rules.pro")
-  }
-
-  buildTypes {
-    release {
-      isMinifyEnabled = false
-      proguardFiles(
-        getDefaultProguardFile("proguard-android-optimize.txt"),
-        "proguard-rules.pro"
-      )
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
-  }
-  // TODO add dokka to documentate app
-  compileOptions {
-    sourceCompatibility = JavaVersion.toVersion(libs.versions.java.sdk.get())
-    targetCompatibility = JavaVersion.toVersion(libs.versions.java.sdk.get())
-  }
-  kotlinOptions {
-    jvmTarget = libs.versions.java.sdk.get()
-  }
-  // extension 1012 1019 empadronamiento
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    // TODO add dokka to documentate app
+    compileOptions {
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.java.sdk.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.java.sdk.get())
+    }
+    kotlinOptions {
+        jvmTarget = libs.versions.java.sdk.get()
+    }
+    // extension 1012 1019 empadronamiento
 }
 
 hilt {
-  enableAggregatingTask = true
+    enableAggregatingTask = true
 }
 
 dependencies {
-  implementation(projects.domainLayer)
-  implementation(libs.core.ktx)
-  implementation(libs.appcompat)
-  // implementation(libs.material)
-  testImplementation(libs.junit)
-  // androidTestImplementation(libs.androidx.testextjunit)
-  // androidTestImplementation(libs.androidx.testEspressoCore)
-  testImplementation(libs.square.turbine)
-  implementation(libs.androidx.coreSplashscreen)
-  implementation(libs.google.daggerHiltAndroid)
+    implementation(projects.domainLayer)
+    implementation(libs.core.ktx)
+    implementation(libs.appcompat)
+    // implementation(libs.material)
+    testImplementation(libs.junit)
+    // androidTestImplementation(libs.androidx.testextjunit)
+    // androidTestImplementation(libs.androidx.testEspressoCore)
+    testImplementation(libs.square.turbine)
+    implementation(libs.androidx.coreSplashscreen)
+    implementation(libs.google.daggerHiltAndroid)
 }
