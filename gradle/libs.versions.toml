@@ -22,10 +22,10 @@ nameSpaceDomain = "com.fsanchezdev.androidcomposeapp.domainlayer"    #not used y
 nameSpacePresentation = "com.fsanchezdev.androidcomposeapp.presentationlayer"
 
 androidx-activity = "1.8.2"
-androidx-compose-compiler = "1.5.8"
+androidx-compose-compiler = "1.5.9"
 androidx-hilt = "1.1.0"
 androidx-lifecycle = "2.7.0"
-androidx-navigation = "2.7.6"
+androidx-navigation = "2.7.7"
 androidx-test = "1.5.0"
 androidx-testEspresso = "3.5.1"
 androidx-workManager = "2.9.0"
@@ -35,21 +35,21 @@ google-dagger = "2.50"
 google-glance-tooling = "0.2.2"
 #check java-sdk to have updated compoileOptions and kotlinOptions when kotlin is updated
 kotlin = "1.9.22"
-kotlinx-coroutines = "1.7.3"
-kotlinx-serialization = "1.6.2"
+kotlinx-coroutines = "1.8.0"
+kotlinx-serialization = "1.6.3"
 plugin-android = "8.2.2"
 plugin-dependencyUpdates = "0.51.0"
-plugin-google-firebase-appDistribution = "4.0.1"
+plugin-google-firebase-appDistribution = "4.1.0"
 plugin-google-firebase-crashlytics = "2.9.9"
 plugin-google-ksp = "1.9.22-1.0.17"
-plugin-google-services = "4.4.0"
+plugin-google-services = "4.4.1"
 plugin-kotlinter = "4.2.0"
-plugin-playPublisher = "3.8.6"
+plugin-playPublisher = "3.9.0"
 square-moshi = "1.15.1"
 square-okhttp = "4.12.0"
 square-retrofit = "2.9.0"
 square-sqlDelight = "1.5.5"
-compose-BOM = "2024.01.00"
+compose-BOM = "2024.02.00"
 constraintLayoutCommpose = "1.0.1"
 
 # new
@@ -165,7 +165,7 @@ google-daggerHiltCompiler = { module = "com.google.dagger:hilt-compiler", versio
 google-daggerHiltCore = { module = "com.google.dagger:hilt-core", version.ref = "google-dagger" }
 google-daggerHiltTesting = { module = "com.google.dagger:hilt-android-testing", version.ref = "google-dagger" }
 google-firebase-analytics = { module = "com.google.firebase:firebase-analytics-ktx" }
-google-firebase-bom = "com.google.firebase:firebase-bom:32.7.1"
+google-firebase-bom = "com.google.firebase:firebase-bom:32.7.2"
 google-firebase-config = { module = "com.google.firebase:firebase-config-ktx" }
 google-firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx" }
 google-firebase-messaging = { module = "com.google.firebase:firebase-messaging-ktx" }
@@ -209,7 +209,7 @@ square-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "square-
 square-okhttpBrotli = { module = "com.squareup.okhttp3:okhttp-brotli", version.ref = "square-okhttp" }
 square-okhttpLoggingInterceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "square-okhttp" }
 square-okhttpMockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "square-okhttp" }
-square-okio = "com.squareup.okio:okio:3.7.0"
+square-okio = "com.squareup.okio:okio:3.8.0"
 square-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "square-retrofit" }
 square-retrofitConverterMoshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "square-retrofit" }
 square-sqlDelightAndroid = { module = "com.squareup.sqldelight:android-driver", version.ref = "square-sqlDelight" }
