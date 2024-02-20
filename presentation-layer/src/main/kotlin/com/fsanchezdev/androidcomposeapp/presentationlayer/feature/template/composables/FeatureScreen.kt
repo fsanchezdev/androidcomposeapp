@@ -29,63 +29,63 @@ import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.view
 
 @Composable
 internal fun FeatureScreen() {
-  val vm = hiltViewModel<FeatureViewModel>()
-  val state by vm.state.collectAsStateWithLifecycle()
-  FeatureScreen(
-    state = state,
-    greet = vm::greet
-  )
+    val vm = hiltViewModel<FeatureViewModel>()
+    val state by vm.state.collectAsStateWithLifecycle()
+    FeatureScreen(
+        state = state,
+        greet = vm::greet
+    )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun FeatureScreen(state: FeatureState, greet: (name: String) -> Unit) {
-  Scaffold(
-    topBar = {
-      TopAppBar(title = { Text(text = stringResource(R.string.greeter)) })
-    }
-  ) { paddingValues ->
-    Column(
-      modifier = Modifier
-        .padding(paddingValues)
-        .fillMaxWidth(),
-      horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-      var text by rememberSaveable { mutableStateOf("") }
-      Text(text = stringResource(R.string.insert_name))
-      TextField(
-        value = text,
-        onValueChange = { text = it },
-        modifier = Modifier.semantics {
-          contentDescription = "Insert name"
+    Scaffold(
+        topBar = {
+            TopAppBar(title = { Text(text = stringResource(R.string.greeter)) })
         }
-      )
-      Button(
-        onClick = { greet(text) },
-        modifier = Modifier.semantics {
-          contentDescription = "Greet button"
-        }
-      ) {
-        Text(text = stringResource(R.string.greet))
-      }
-      Text(
-        text = state.greeting,
-        modifier = Modifier.semantics {
-          contentDescription = "Greeting"
-        }
-      )
+    ) { paddingValues ->
+        Column(
+            modifier = Modifier
+                .padding(paddingValues)
+                .fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            var text by rememberSaveable { mutableStateOf("") }
+            Text(text = stringResource(R.string.insert_name))
+            TextField(
+                value = text,
+                onValueChange = { text = it },
+                modifier = Modifier.semantics {
+                    contentDescription = "Insert name"
+                }
+            )
+            Button(
+                onClick = { greet(text) },
+                modifier = Modifier.semantics {
+                    contentDescription = "Greet button"
+                }
+            ) {
+                Text(text = stringResource(R.string.greet))
+            }
+            Text(
+                text = state.greeting,
+                modifier = Modifier.semantics {
+                    contentDescription = "Greeting"
+                }
+            )
 
-      // Image(painter = , contentDescription = )
+            // Image(painter = , contentDescription = )
+        }
     }
-  }
 }
 
 @Preview(name = "Day mode")
 @Preview(name = "Night mode", uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun Preview() {
-  FeatureScreen(
-    state = FeatureState(),
-    greet = {}
-  )
+    FeatureScreen(
+        state = FeatureState(),
+        greet = {}
+    )
 }
