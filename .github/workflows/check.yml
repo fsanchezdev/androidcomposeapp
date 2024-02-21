@@ -36,3 +36,5 @@ jobs:
           arguments: check --scan
       - name: Run Unit Tests
         run: ./gradlew test --scan
+
+        
