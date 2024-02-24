@@ -6,7 +6,7 @@ import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextInput
 import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.composables.FeatureScreen
-import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.state.FeatureState
+import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.state.FeatureStateOld
 import kotlin.test.assertEquals
 import org.junit.Rule
 import org.junit.Test
@@ -20,7 +20,7 @@ internal class FeatureScreenUnitTest {
     internal fun greetingIsDisplayed() {
         rule.setContent {
             FeatureScreen(
-                state = FeatureState(greeting = "SomeGreeting"),
+                state = FeatureStateOld(greeting = "SomeGreeting"),
                 greet = {}
             )
         }
@@ -34,7 +34,7 @@ internal class FeatureScreenUnitTest {
         var text = ""
         rule.setContent {
             FeatureScreen(
-                state = FeatureState(),
+                state = FeatureStateOld(),
                 greet = { text = it }
             )
         }
