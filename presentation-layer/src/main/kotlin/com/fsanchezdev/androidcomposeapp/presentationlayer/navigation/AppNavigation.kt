@@ -3,10 +3,12 @@ package com.fsanchezdev.androidcomposeapp.presentationlayer.navigation
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.navigation.FeatureNavigation
 
+@Preview
 @Composable
 public fun AppNavigation() {
     val navController = rememberNavController()

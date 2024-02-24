@@ -16,7 +16,7 @@ public object FeatureNavigation {
         }
     }
 
-    public fun navigate(navController: NavController) {
-        navController.navigate(ROUTE)
+    public fun NavController.navigate() {
+        navigate(ROUTE)
     }
 }
