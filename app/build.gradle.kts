@@ -1,6 +1,5 @@
 import com.android.build.api.variant.VariantOutputConfiguration
 import java.util.Properties
-import org.gradle.kotlin.dsl.libs
 
 plugins {
     id(libs.plugins.android.application.get().pluginId)
@@ -32,7 +31,7 @@ android {
     buildToolsVersion = libs.versions.android.buildTools.get()
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
-        applicationId = "com.fsanchezdev.androidcomposeapp" // TODO: Change me!
+        applicationId = libs.versions.applicationId.get()
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

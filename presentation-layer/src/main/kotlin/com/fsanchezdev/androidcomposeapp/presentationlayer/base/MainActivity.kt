@@ -8,7 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
@@ -24,38 +24,39 @@ public class MainActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         enableEdgeToEdge()
         setContent {
-            ChangeSystemBarsTheme(this, !isSystemInDarkTheme())
+            ChangeSystemBarsTheme(!isSystemInDarkTheme())
             AppTheme {
                 AppNavigation()
             }
         }
     }
-}
 
-@Composable
-private fun ChangeSystemBarsTheme(activity: ComponentActivity, lightTheme: Boolean) {
-    val barColor = MaterialTheme.colorScheme.background.toArgb()
-    LaunchedEffect(lightTheme) {
-        if (lightTheme) {
-            activity.enableEdgeToEdge(
-                statusBarStyle = SystemBarStyle.light(
-                    barColor,
-                    barColor
-                ),
-                navigationBarStyle = SystemBarStyle.light(
-                    barColor,
-                    barColor
+    @Composable
+    private fun ChangeSystemBarsTheme(lightTheme: Boolean) {
+        val barColor = MaterialTheme.colorScheme.background.toArgb()
+        DisposableEffect(lightTheme) {
+            if (lightTheme) {
+                this@MainActivity.enableEdgeToEdge(
+                    statusBarStyle = SystemBarStyle.light(
+                        barColor,
+                        barColor
+                    ),
+                    navigationBarStyle = SystemBarStyle.light(
+                        barColor,
+                        barColor
+                    )
                 )
-            )
-        } else {
-            activity.enableEdgeToEdge(
-                statusBarStyle = SystemBarStyle.dark(
-                    barColor
-                ),
-                navigationBarStyle = SystemBarStyle.dark(
-                    barColor
+            } else {
+                this@MainActivity.enableEdgeToEdge(
+                    statusBarStyle = SystemBarStyle.dark(
+                        barColor
+                    ),
+                    navigationBarStyle = SystemBarStyle.dark(
+                        barColor
+                    )
                 )
-            )
+            }
+            onDispose {}
         }
     }
 }

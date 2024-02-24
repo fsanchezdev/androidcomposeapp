@@ -1,21 +1,10 @@
-#const val compileSdk = 31
-#const val minSdk = 23
-#const val targetSdk = 31
-#const val applicationId = "com.br.wcabral.kotlin.android.githubcompose"
-#const val versionCode = 1
-#const val versionName = "1.0.0"
-#const val androidTestInstrumentation = "androidx.test.runner.AndroidJUnitRunner"
-
-#val javaJvmTarget = JavaVersion.VERSION_11.toString()
-#val javaCompatibility = JavaVersion.VERSION_11
-
-
 [versions]
 android-buildTools = "34.0.0"
 android-compileSdk = "34"
 android-minSdk = "29"
 android-targetSdk = "34"
 java-sdk = "17"
+applicationId = "com.fsanchezdev.androidcomposeapp"
 nameSpace = "com.fsanchezdev.androidcomposeapp.app"
 nameSpaceData = "com.fsanchezdev.androidcomposeapp.datalayer"
 nameSpaceDomain = "com.fsanchezdev.androidcomposeapp.domainlayer"    #not used yet
@@ -147,6 +136,7 @@ androidx-workTesting = { module = "androidx.work:work-testing", version.ref = "a
 coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 coilCompose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 
+
 #acompanist nor necesary?
 google-accompanistFlow = { module = "com.google.accompanist:accompanist-flowlayout", version.ref = "google-accompanist" }
 google-accompanistInsetsUi = { module = "com.google.accompanist:accompanist-insets-ui", version.ref = "google-accompanist" }
@@ -155,7 +145,6 @@ google-accompanistPager = { module = "com.google.accompanist:accompanist-pager",
 google-accompanistPagerInd = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "google-accompanist" }
 google-accompanistPermissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "google-accompanist" }
 google-accompanistSystemUi = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "google-accompanist" }
-
 
 
 google-dagger = { module = "com.google.dagger:dagger", version.ref = "google-dagger" }
@@ -220,7 +209,7 @@ square-turbine = "app.cash.turbine:turbine:1.0.0"
 #material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [bundles]
-androidx-compose = ["androidx-composeAnimation", "androidx-composeFoundation", "androidx-composeMaterial3", "androidx-composeMaterial3WindowSize", "androidx-composeMaterialIcons", "androidx-composeMaterialIconsExt", "androidx-composeRuntime", "androidx-composeUi", "androidx-composeUiGraphics", "androidx-composeUiToolingPreview"]
+androidx-compose = ["androidx-composeAnimation", "androidx-composeFoundation", "androidx-composeMaterial3", "androidx-composeMaterial3WindowSize", "androidx-composeMaterialIcons", "androidx-composeMaterialIconsExt", "androidx-composeRuntime", "androidx-composeUi", "androidx-composeUiGraphics", "androidx-composeUiToolingPreview", "androidx-composeUiTooling"]
 coil = ["coil", "coilCompose"]
 square-moshi = ["square-moshi", "square-moshiAdapters", "square-moshiKotlin"]
 square-okhttp = ["square-okhttp", "square-okhttpLoggingInterceptor", "square-okhttpBrotli"]
