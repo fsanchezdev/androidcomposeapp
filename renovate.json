@@ -11,6 +11,7 @@
   ],
   "automerge": true,
   "platformAutomerge": true,
+  "automergeStrategy": "merge-commit",
   "packageRules": [
     {
       "matchUpdateTypes": [
