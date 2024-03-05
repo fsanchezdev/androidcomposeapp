@@ -21,6 +21,8 @@ gen/
 .idea/encodings.xml
 .idea/inspectionProfiles
 .idea/kotlinc.xml
+.idea/ktlint-plugin.xml
+.idea/androidTestResultsUserPreferences.xml
 
 #  Uncomment the following line in case you need and you don't have the release build type files in your app
 # release/
