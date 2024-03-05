@@ -34,7 +34,6 @@ android {
     kotlinOptions {
         jvmTarget = libs.versions.java.sdk.get()
     }
-    // extension 1012 1019 empadronamiento
 }
 
 hilt {
