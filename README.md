@@ -9,7 +9,7 @@ This project uses the following characteristics:
     - Domain
     - Presentation
         - Compose UI
-- JDK17 toolchain
+- JDK20 toolchain
 - 100% Kotlin (no 'java' dirs)
 - 100% Jetpack Compose (no fragments)
 - LeakCanary
