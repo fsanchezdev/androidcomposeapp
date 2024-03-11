@@ -6,13 +6,21 @@
   "baseBranches": [
     "main"
   ],
-  "schedule": [
-    "before 4am on Monday"
-  ],
-  "automerge": true,
-  "platformAutomerge": true,
+  "automerge": false,
+  "platformAutomerge": false,
   "automergeStrategy": "merge-commit",
   "packageRules": [
+    {
+      "matchFileNames": [".github/workflows/check.yml"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "groupName": "workflow-update",
+      "branchPrefix": "workflow-updates-"
+    },
     {
       "matchUpdateTypes": [
         "minor",
