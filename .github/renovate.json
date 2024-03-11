@@ -11,17 +11,11 @@
   "automergeStrategy": "merge-commit",
   "packageRules": [
     {
-      "matchFileNames": [".github/workflows/check.yml"],
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
-      ],
-      "groupName": "workflow-update",
-      "branchPrefix": "workflow-updates-"
+      "matchFileNames": [".github/workflows/*.yml", ".github/workflows/*.yaml", "^check.yml"],
+      "branchPrefix": "workflow-updates/"
     },
     {
+      "excludePackagePatterns": ["^.github/workflows/.*$"],
       "matchUpdateTypes": [
         "minor",
         "patch",
