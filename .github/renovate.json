@@ -11,7 +11,7 @@
   "automergeStrategy": "merge-commit",
   "packageRules": [
     {
-      "matchFileNames": [".github/workflows/check.yml"],
+      "matchStrings": [".github/workflows/check.yml"],
       "matchUpdateTypes": [
         "minor",
         "patch",
