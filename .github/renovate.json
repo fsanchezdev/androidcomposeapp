@@ -12,16 +12,10 @@
   "packageRules": [
     {
       "matchFileNames": [".github/workflows/check.yml"],
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
-      ],
-      "groupName": "workflow-update",
-      "branchPrefix": "workflow-updates-"
+      "branchPrefix": "workflow-updates/"
     },
     {
+      "excludePackagePatterns": ["^.github/workflows/.*$"],
       "matchUpdateTypes": [
         "minor",
         "patch",
