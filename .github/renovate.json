@@ -6,24 +6,37 @@
   "baseBranches": [
     "main"
   ],
+  "automergeStrategy": "merge-commit",
   "schedule": [
     "before 4am on Monday"
   ],
-  "automerge": true,
-  "platformAutomerge": true,
-  "automergeStrategy": "merge-commit",
   "packageRules": [
     {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchFileNames": [".github/workflows/check.yml"],
+      "groupName": "workflow-updates"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchPackageNames": ["com.android.tools.build:gradle"],
+      "groupName": "android-gradle-plugin"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
       "matchUpdateTypes": [
         "minor",
         "patch",
         "pin",
         "digest"
       ],
-      "groupName": "dependencies-minor-patch-digest-updates",
-      "groupSlug": "dependencies-minor-patch-digest-updates"
+      "groupName": "dependencies-minor-patch-digest",
+      "groupSlug": "dependencies-minor-patch-digest"
     }
   ],
+  "assignees": ["fsanchezdev"],
   "semanticCommitScope": "{{parentDir}}",
   "separateMajorMinor": true
 }
