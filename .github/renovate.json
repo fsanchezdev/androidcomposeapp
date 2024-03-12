@@ -20,7 +20,7 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchPackageNames": ["com.android.tools.build:gradle", "com.android.application","com.android.library"],
+      "matchPackageNames": ["^com.android.tools.build:gradle", "^com.android.application","^com.android.library"],
       "groupName": "android-gradle-plugin",
       "commitMessagePrefix": "AGP",
       "commitMessageTopic": "{{dependency}}",
@@ -28,18 +28,9 @@
     },
     {
       "matchPackagePatterns" : [
-        "androidx.compose.compiler"
-      ],
-      "groupName" : "compose-compiler",
-      "commitMessagePrefix": "compose-compiler",
-      "commitMessageTopic": "{{dependency}}",
-      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
-    },
-    {
-      "matchPackagePatterns" : [
-        "org.jetbrains.kotlin",
-        "com.google.devtools.ksp",
-        "androidx.compose.compiler"
+        "^org.jetbrains.kotlin",
+        "^com.google.devtools.ksp",
+        "^androidx.compose.compiler"
       ],
       "groupName" : "kotlin",
       "commitMessagePrefix": "Kotlin",
@@ -55,8 +46,8 @@
         "pin",
         "digest"
       ],
-      "excludePackageNames": ["com.android.tools.build:gradle", "com.android.application","com.android.library",
-        "org.jetbrains.kotlin", "com.google.devtools.ksp", "androidx.compose.compiler"],
+      "excludePackageNames": ["^com.android.tools.build:gradle", "^com.android.application","^com.android.library",
+        "^org.jetbrains.kotlin", "^com.google.devtools.ksp", "^androidx.compose.compiler"],
       "groupName": "dependencies-minor-patch-digest"
     }
   ],
