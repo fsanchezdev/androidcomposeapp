@@ -4,7 +4,8 @@
     "config:best-practices"
   ],
   "baseBranches": [
-    "main"
+    "main",
+    "temp"
   ],
   "automergeStrategy": "merge-commit",
   "schedule": [
@@ -20,8 +21,11 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchPackageNames": ["com.android.tools.build:gradle"],
-      "groupName": "android-gradle-plugin"
+      "matchPackageNames": ["com.android.tools.build:gradle", "com.android.application","com.android.library"],
+      "groupName": "android-gradle-plugin",
+      "commitMessageTopic": "{{dependency}}",
+      "commitMessageExtra": "to {{newVersion}}",
+      "commitMessagePrefix": "update AGP"
     },
     {
       "automerge": false,
@@ -32,8 +36,8 @@
         "pin",
         "digest"
       ],
-      "groupName": "dependencies-minor-patch-digest",
-      "groupSlug": "dependencies-minor-patch-digest"
+      "excludePackageNames": ["com.android.tools.build:gradle", "com.android.application","com.android.library"],
+      "groupName": "dependencies-minor-patch-digest"
     }
   ],
   "assignees": ["fsanchezdev"],
