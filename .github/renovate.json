@@ -9,8 +9,6 @@
   "schedule": [
     "before 4am on Monday"
   ],
-  "automerge": true,
-  "platformAutomerge": true,
   "automergeStrategy": "merge-commit",
   "packageRules": [
     {
@@ -58,6 +56,7 @@
       "groupName": "dependencies-minor-patch-digest"
     }
   ],
+  "assignees": ["fsanchezdev"],
   "semanticCommitScope": "{{parentDir}}",
   "separateMajorMinor": true
 }
