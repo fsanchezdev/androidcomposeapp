@@ -14,14 +14,48 @@
   "automergeStrategy": "merge-commit",
   "packageRules": [
     {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchFileNames": [".github/workflows/check.yml"],
+      "groupName": "workflow-updates"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchPackageNames": [
+        "^com.android.tools.build",
+        "^com.android.application",
+        "^com.android.library"],
+      "groupName": "android-gradle-plugin",
+      "commitMessagePrefix": "AGP",
+      "commitMessageTopic": "{{dependency}}",
+      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchPackagePatterns" : [
+        "^org.jetbrains.kotlin",
+        "^com.google.devtools.ksp",
+        "^androidx.compose.compiler"
+      ],
+      "groupName" : "kotlin-related",
+      "commitMessagePrefix": "kotlin related dependencies",
+      "commitMessageTopic": "{{dependency}}",
+      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
       "matchUpdateTypes": [
         "minor",
         "patch",
         "pin",
         "digest"
       ],
-      "groupName": "dependencies-minor-patch-digest-updates",
-      "groupSlug": "dependencies-minor-patch-digest-updates"
+      "excludePackagePatterns": ["^com.android.tools.build", "^com.android.application","^com.android.library",
+        "^org.jetbrains.kotlin", "^com.google.devtools.ksp", "^androidx.compose.compiler"],
+      "groupName": "dependencies-minor-patch-digest"
     }
   ],
   "semanticCommitScope": "{{parentDir}}",
