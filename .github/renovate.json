@@ -6,9 +6,6 @@
   "baseBranches": [
     "main"
   ],
-  "schedule": [
-    "before 4am on Monday"
-  ],
   "automerge": true,
   "platformAutomerge": true,
   "automergeStrategy": "merge-commit",
