@@ -8,7 +8,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("org.jmailen.kotlinter")
-    id("org.jetbrains.kotlin.kapt")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -56,10 +56,6 @@ kotlin {
     }
 }
 
-kapt {
-    correctErrorTypes = true // Required by dagger-hilt
-}
-
 dependencies {
     implementation(libs.findBundle("androidx.compose").get())
     implementation(libs.findLibrary("androidx.activityCompose").get())
@@ -73,7 +69,7 @@ dependencies {
     implementation(platform(libs.findLibrary("compose.bom").get()))
     // debugImplementation(libs.findLibrary("androidx-composeUiTestManifest").get())
     // debugImplementation(libs.findLibrary("androidx.composeUiTooling").get())
-    kapt(libs.findLibrary("google.daggerHiltCompiler").get())
+    ksp(libs.findLibrary("google.daggerHiltCompiler").get())
     testImplementation(libs.findLibrary("androidx.testExtJunit").get())
     testImplementation(libs.findLibrary("junit").get())
     testImplementation(libs.findLibrary("kotlin.test").get())
