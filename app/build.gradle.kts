@@ -10,7 +10,7 @@ plugins {
     // TODO // id(libs.plugins.playPublisher.get().pluginId)
     id(libs.plugins.kotlinter.get().pluginId)
     id(libs.plugins.dagger.hilt.get().pluginId)
-    id(libs.plugins.kotlin.kapt.get().pluginId)
+    id(libs.plugins.google.ksp.get().pluginId)
 }
 
 android {
@@ -115,10 +115,6 @@ androidComponents {
 //     releaseStatus.set(ReleaseStatus.DRAFT)
 // }
 
-kapt {
-    correctErrorTypes = true // Required by dagger-hilt
-}
-
 // TODO mirar tema para que este las buildvariasnts, mirar  retrofit
 
 dependencies {
@@ -135,7 +131,7 @@ dependencies {
     implementation(platform(libs.compose.bom))
     // debugImplementation(libs.androidx.composeUiTestManifest)
     // debugImplementation(libs.androidx.composeUiTooling)
-    kapt(libs.google.daggerHiltCompiler)
+    ksp(libs.google.daggerHiltCompiler)
     testImplementation(libs.junit)
 
     // not required in app?
