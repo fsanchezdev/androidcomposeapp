@@ -1,15 +1,15 @@
 package com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.composables
 
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -23,15 +23,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.fsanchezdev.androidcomposeapp.domainlayer.FailureBo
 import com.fsanchezdev.androidcomposeapp.presentationlayer.R
+import com.fsanchezdev.androidcomposeapp.presentationlayer.base.compose.utils.HandleFailure
 import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.state.FeatureEffectEvents
 import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.state.FeatureState
-import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.state.FeatureStateOld
 import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.state.FeatureUserEvents
 import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.viewmodel.FeatureViewModel
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.onEach
@@ -43,32 +46,26 @@ public fun FeatureScreen() {
     } else {
         hiltViewModel<FeatureViewModel>()
     }
-    val stateOld by vm.state.collectAsStateWithLifecycle()
     val state: FeatureState by vm.screenState
 
-    // TODO handle error state here?
-
     FeatureScreen(
-        state = stateOld,
-        state2 = state,
-        greet = vm::greet,
+        state = state,
         onEvent = vm::onEvent,
-        effect = vm.effect
+        effect = vm.effect,
+        failure = vm.failure
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 public fun FeatureScreen(
-    state: FeatureStateOld,
-    greet: (name: String) -> Unit,
-    state2: FeatureState,
+    state: FeatureState,
     onEvent: (FeatureUserEvents) -> Unit,
-    effect: Flow<FeatureEffectEvents>
+    effect: Flow<FeatureEffectEvents>,
+    failure: SharedFlow<FailureBo>
 ) {
     var fieldText: String by rememberSaveable { mutableStateOf("") }
 
-    LaunchedEffect(key1 = "") {
+    LaunchedEffect(key1 = Unit) {
         effect.onEach { effect ->
             when (effect) {
                 is FeatureEffectEvents.ShowGreetings -> {
@@ -79,14 +76,15 @@ public fun FeatureScreen(
         }.collect()
     }
 
-    Scaffold(
-        topBar = {
-            TopAppBar(title = { Text(text = stringResource(R.string.greeter)) })
-        }
-    ) { paddingValues ->
+    Box(modifier = Modifier.fillMaxSize()) {
+        Text(
+            text = stringResource(R.string.greeter),
+            modifier = Modifier
+                .padding(16.dp)
+                .size(30.dp)
+        )
         Column(
             modifier = Modifier
-                .padding(paddingValues)
                 .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -100,11 +98,9 @@ public fun FeatureScreen(
                 }
             )
             Button(
-                onClick = { // greet(text)
+                onClick = {
                     onEvent(FeatureUserEvents.OnButtonClicked(text))
-                    greet.toString()
-                    state.greeting
-                    state2.stateGreeting
+                    state.stateGreeting
                 },
                 modifier = Modifier.semantics {
                     contentDescription = "Greet button"
@@ -121,18 +117,22 @@ public fun FeatureScreen(
 
             // Image(painter = , contentDescription = )
         }
+
+        HandleFailure(
+            failure = failure,
+            onEvent = { onEvent(FeatureUserEvents.OnNoNetworkRetryClick) }
+        )
     }
 }
 
-@Preview(name = "Day mode")
-@Preview(name = "Night mode", uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(showBackground = true, name = "Day mode")
+@Preview(showBackground = true, name = "Night mode", uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun Preview() {
     FeatureScreen(
-        state = FeatureStateOld(),
-        state2 = FeatureState(),
-        greet = {},
+        state = FeatureState(),
         onEvent = {},
-        effect = flowOf()
+        effect = flowOf(),
+        failure = MutableSharedFlow()
     )
 }
