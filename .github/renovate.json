@@ -15,7 +15,8 @@
       "automerge": false,
       "platformAutomerge": false,
       "matchFileNames": [".github/workflows/check.yml"],
-      "groupName": "workflow-updates"
+      "groupName": "workflow-updates",
+      "separateMinorPatch": true
     },
     {
       "automerge": false,
