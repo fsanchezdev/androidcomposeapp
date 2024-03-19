@@ -33,9 +33,9 @@
       "automerge": false,
       "platformAutomerge": false,
       "matchPackagePatterns" : [
-        "^org.jetbrains.kotlin",
-        "^com.google.devtools.ksp",
-        "^androidx.compose.compiler"
+        "org.jetbrains.kotlin",
+        "com.google.devtools.ksp",
+        "androidx.compose.compiler"
       ],
       "groupName" : "kotlin related dependencies"
     },
@@ -49,8 +49,8 @@
         "digest"
       ],
       "ignorePaths": ["**/workflows/**"],
-      "excludePackagePatterns": ["^com.android.tools.build", "^com.android.application","^com.android.library",
-        "^org.jetbrains.kotlin", "^com.google.devtools.ksp", "^androidx.compose.compiler"],
+      "excludePackagePatterns": ["github-actions","com.android.tools.build", "com.android.application","com.android.library",
+        "org.jetbrains.kotlin", "com.google.devtools.ksp", "androidx.compose.compiler"],
       "groupName": "dependencies-minor-patch-digest"
     }
   ],
