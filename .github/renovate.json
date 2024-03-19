@@ -14,16 +14,16 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchFileNames": ["check.yml"],
+      "matchPackageNames": ["actions/*"],
       "groupName": "workflow-updates"
     },
     {
       "automerge": false,
       "platformAutomerge": false,
       "matchPackagePatterns": [
-        "^com.android.tools.build",
-        "^com.android.application",
-        "^com.android.library"
+        "com.android.tools.build",
+        "com.android.application",
+        "com.android.library"
       ],
       "groupName": "android-gradle-plugin",
       "commitMessagePrefix": "AGP",
