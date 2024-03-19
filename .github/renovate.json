@@ -14,7 +14,6 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchPaths": [".github/workflows/*"],
       "matchPackagePatterns": ["^actions/"],
       "groupName": "workflow-updates"
     },
