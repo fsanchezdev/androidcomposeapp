@@ -14,7 +14,7 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchFileNames": [".github/workflows/check.yml"],
+      "matchFileNames": [".github/workflows/check.yml"]
     },
     {
       "automerge": false,
