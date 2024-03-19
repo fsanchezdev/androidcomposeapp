@@ -2,4 +2,11 @@
     <string name="greeter">Greeter</string>
     <string name="insert_name">Insert name</string>
     <string name="greet">Greet</string>
+    <string name="error">Error</string>
+    <string name="error_input_params">Valores introducidos incorrectos</string>
+    <string name="unauthorized_error">La sesión ha expirado. Por favor, introduce tu contraseña de nuevo por motivos de seguridad.</string>
+    <string name="no_network_message">Parece que algo falla con tu conexión</string>
+    <string name="no_network_retry">Volver a Intentar</string>
+    <string name="server_error">Error en el servidor</string>
+    <string name="unknown_error">Parece que algo ha ido mal</string>
 </resources>
