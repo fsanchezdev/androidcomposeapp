@@ -14,8 +14,7 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchFileNames": [".github/workflows/check.yml"],
-      "groupName": "workflow-updates"
+      "matchPackagePatterns": ["^actions/"]
     },
     {
       "automerge": false,
@@ -48,7 +47,7 @@
         "pin",
         "digest"
       ],
-      "excludePackagePatterns": ["^com.android.tools.build", "^com.android.application","^com.android.library",
+      "excludePackagePatterns": ["^actions/","^com.android.tools.build", "^com.android.application","^com.android.library",
         "^org.jetbrains.kotlin", "^com.google.devtools.ksp", "^androidx.compose.compiler"],
       "groupName": "dependencies-minor-patch-digest"
     }
