@@ -4,7 +4,7 @@ import com.fsanchezdev.androidcomposeapp.presentationlayer.base.compose.BaseMviE
 
 public sealed class FeatureUserEvents : BaseMviEvent.User {
     public data class OnButtonClicked(val buttonTextGreeting: String) : FeatureUserEvents()
-    // public data class ShowGreetings(val greeting: String) : FeatureUserEvents()
+    public data object OnNoNetworkRetryClick : FeatureUserEvents()
 }
 
 public sealed class FeatureEffectEvents : BaseMviEvent.Effect {

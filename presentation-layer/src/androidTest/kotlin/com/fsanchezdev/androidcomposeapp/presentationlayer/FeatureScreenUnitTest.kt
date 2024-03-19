@@ -5,44 +5,46 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextInput
+import com.fsanchezdev.androidcomposeapp.domainlayer.FailureBo
 import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.composables.FeatureScreen
-import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.state.FeatureStateOld
-import kotlin.test.assertEquals
+import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.state.FeatureState
+import com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.viewmodel.FeatureViewModel
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.test.runTest
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
 internal class FeatureScreenUnitTest {
-
     @get:Rule
-    internal val rule = createComposeRule()
+    internal val composeTestRule = createComposeRule()
 
-    @Test
-    internal fun greetingIsDisplayed() {
-        rule.setContent {
-            FeatureScreen(
-                state = FeatureStateOld(greeting = "SomeGreeting"),
-                greet = {}
-            )
-        }
+    private lateinit var viewModel: FeatureViewModel
 
-        rule.onNodeWithContentDescription("Greeting")
-            .assertTextEquals("SomeGreeting")
+    @Before
+    fun setup() {
+        viewModel = FeatureViewModel()
     }
 
     @Test
-    internal fun buttonSendsTextFieldContentToGreetHandler() {
-        var text = ""
-        rule.setContent {
+    fun featureScreen_updatesTextOnButtonCLick() = runTest {
+        val failureFlow = MutableSharedFlow<FailureBo>()
+
+        composeTestRule.setContent {
             FeatureScreen(
-                state = FeatureStateOld(),
-                greet = { text = it }
+                state = FeatureState(stateGreeting = ""),
+                onEvent = viewModel::onEvent,
+                effect = viewModel.effect,
+                failure = failureFlow
             )
         }
 
-        rule.onNodeWithContentDescription("Insert name")
+        composeTestRule.onNodeWithContentDescription("Insert name")
             .performTextInput("Mario")
-        rule.onNodeWithContentDescription("Greet button")
+        composeTestRule.onNodeWithContentDescription("Greet button")
             .performClick()
-        assertEquals("Mario", text)
+
+        composeTestRule.onNodeWithContentDescription("Greeting")
+            .assertTextEquals("from effect Mario")
     }
 }
