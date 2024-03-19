@@ -15,7 +15,8 @@
       "automerge": false,
       "platformAutomerge": false,
       "matchPackagePatterns": ["^actions/"],
-      "groupName": "workflow-updates"
+      "groupName": "workflow-updates",
+      "commitMessagePrefix": "ASD"
     },
     {
       "automerge": false,
