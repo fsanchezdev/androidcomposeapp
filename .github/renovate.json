@@ -49,7 +49,6 @@
         "pin",
         "digest"
       ],
-      "ignorePaths": ["**/workflows/**"],
       "excludePackagePatterns": ["^actions/","^com.android.tools.build", "^com.android.application","^com.android.library",
         "^org.jetbrains.kotlin", "^com.google.devtools.ksp", "^androidx.compose.compiler"],
       "groupName": "dependencies-minor-patch-digest"
