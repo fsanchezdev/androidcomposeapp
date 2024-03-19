@@ -15,7 +15,6 @@
       "automerge": false,
       "platformAutomerge": false,
       "matchFileNames": [".github/workflows/check.yml"],
-      "groupName": "workflow-updates"
     },
     {
       "automerge": false,
@@ -38,6 +37,20 @@
         "^androidx.compose.compiler"
       ],
       "groupName" : "kotlin related dependencies"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "ignorePaths": [".github/**"],
+      "excludePackagePatterns": ["^com.android.tools.build", "^com.android.application","^com.android.library",
+        "^org.jetbrains.kotlin", "^com.google.devtools.ksp", "^androidx.compose.compiler"],
+      "groupName": "dependencies-minor-patch-digest"
     }
   ],
   "assignees": ["fsanchezdev"],
