@@ -49,7 +49,7 @@
       {
         "automerge": false,
         "platformAutomerge": false,
-        "matchFileNames": ["**/check.yml"],
+        "matchRepositories": ["**/workflows/"],
         "commitMessagePrefix": "QWEQWE"
       }
   ],
