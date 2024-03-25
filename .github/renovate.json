@@ -11,14 +11,6 @@
   ],
   "automergeStrategy": "merge-commit",
   "packageRules": [
-
-{
-  "automerge": false,
-  "platformAutomerge": false,
-  "matchManagers": [
-    "github-actions"
-  ]
-},
     {
       "automerge": false,
       "platformAutomerge": false,
@@ -28,15 +20,8 @@
         "pin",
         "digest"
       ],
-      "excludePackagePatterns": [
-        "^actions/",
-        "^com.android.tools.build",
-        "^com.android.application",
-        "^com.android.library",
-        "^org.jetbrains.kotlin",
-        "^com.google.devtools.ksp",
-        "^androidx.compose.compiler"
-      ],
+      "excludePackagePatterns": ["^actions/","^com.android.tools.build", "^com.android.application","^com.android.library",
+        "^org.jetbrains.kotlin", "^com.google.devtools.ksp", "^androidx.compose.compiler"],
       "groupName": "dependencies-minor-patch-digest"
     },
     {
@@ -54,17 +39,21 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchPackagePatterns": [
+      "matchPackagePatterns" : [
         "^org.jetbrains.kotlin",
         "^com.google.devtools.ksp",
         "^androidx.compose.compiler"
       ],
-      "groupName": "kotlin related dependencies"
+      "groupName" : "kotlin related dependencies"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchManagers": ["github-actions"],
+      "commitMessagePrefix": "QQQQQ"
     }
   ],
-  "assignees": [
-    "fsanchezdev"
-  ],
+  "assignees": ["fsanchezdev"],
   "semanticCommitScope": "{{parentDir}}",
   "separateMajorMinor": true
 }
