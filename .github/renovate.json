@@ -49,8 +49,7 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchManagers": ["github-actions"],
-      "groupName": "QQQQQ"
+      "matchManagers": ["github-actions"]
     }
   ],
   "assignees": ["fsanchezdev"],
