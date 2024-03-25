@@ -14,7 +14,7 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchPackagePatterns": ["^actions/"]
+      "fileMatch": ["\\.yml$", "\\.yaml$"]
     },
     {
       "automerge": false,
