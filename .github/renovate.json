@@ -14,7 +14,7 @@
       {
         "automerge": false,
         "platformAutomerge": false,
-        "matchRepositories": ["**/workflows/"],
+        "matchManagers": ["github-actions"],
         "commitMessagePrefix": "QWEQWE"
       }
   ],
