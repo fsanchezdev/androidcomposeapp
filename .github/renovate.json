@@ -14,9 +14,44 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchFileNames": ["**/check.yml"],
-      "commitMessagePrefix": "AGP"
-    }
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "excludePackagePatterns": ["^actions/","^com.android.tools.build", "^com.android.application","^com.android.library",
+        "^org.jetbrains.kotlin", "^com.google.devtools.ksp", "^androidx.compose.compiler"],
+      "groupName": "dependencies-minor-patch-digest"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchPackagePatterns": [
+        "^com.android.tools.build",
+        "^com.android.application",
+        "^com.android.library"
+      ],
+      "groupName": "android-gradle-plugin",
+      "commitMessagePrefix": "AGP",
+      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchPackagePatterns" : [
+        "^org.jetbrains.kotlin",
+        "^com.google.devtools.ksp",
+        "^androidx.compose.compiler"
+      ],
+      "groupName" : "kotlin related dependencies"
+    },
+      {
+        "automerge": false,
+        "platformAutomerge": false,
+        "matchFileNames": ["**/check.yml"],
+        "commitMessagePrefix": "QWEQWE"
+      }
   ],
   "assignees": ["fsanchezdev"],
   "semanticCommitScope": "{{parentDir}}",
