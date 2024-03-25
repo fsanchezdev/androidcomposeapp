@@ -14,7 +14,7 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "fileMatch": ["\\.yml$", "\\.yaml$"]
+      "matchRepositories": ["workflows/"]
     },
     {
       "automerge": false,
