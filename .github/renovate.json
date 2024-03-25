@@ -50,7 +50,7 @@
       "automerge": false,
       "platformAutomerge": false,
       "matchManagers": ["github-actions"],
-      "commitMessagePrefix": "QQQQQ"
+      "groupName": "QQQQQ"
     }
   ],
   "assignees": ["fsanchezdev"],
