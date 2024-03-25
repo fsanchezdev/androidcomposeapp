@@ -14,7 +14,8 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchFileNames": ["**/check.yml"]
+      "matchFileNames": ["**/check.yml"],
+      "commitMessagePrefix": "AGP"
     }
   ],
   "assignees": ["fsanchezdev"],
