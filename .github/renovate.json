@@ -14,7 +14,7 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchManagers": ["github-actions"]
+      "matchFileNames": ["check.yml"]
     },
     {
       "automerge": false,
