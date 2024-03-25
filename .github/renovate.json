@@ -11,6 +11,14 @@
   ],
   "automergeStrategy": "merge-commit",
   "packageRules": [
+
+{
+  "automerge": false,
+  "platformAutomerge": false,
+  "matchManagers": [
+    "github-actions"
+  ]
+},
     {
       "automerge": false,
       "platformAutomerge": false,
@@ -52,13 +60,6 @@
         "^androidx.compose.compiler"
       ],
       "groupName": "kotlin related dependencies"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
-      "matchManagers": [
-        "github-actions"
-      ]
     }
   ],
   "assignees": [
