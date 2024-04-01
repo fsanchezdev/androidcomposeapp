@@ -20,7 +20,7 @@ androidx-testEspresso = "3.5.1"
 androidx-workManager = "2.9.0"
 coil = "2.6.0"
 google-accompanist = "0.34.0"
-google-dagger = "2.51"
+google-dagger = "2.51.1"
 google-glance-tooling = "0.2.2"
 #check java-sdk to have updated compoileOptions and kotlinOptions when kotlin is updated
 kotlin = "1.9.23"
@@ -36,9 +36,9 @@ plugin-kotlinter = "4.3.0"
 plugin-playPublisher = "3.9.1"
 square-moshi = "1.15.1"
 square-okhttp = "4.12.0"
-square-retrofit = "2.10.0"
+square-retrofit = "2.11.0"
 square-sqlDelight = "1.5.5"
-compose-BOM = "2024.02.02"
+compose-BOM = "2024.03.00"
 constraintLayoutCommpose = "1.0.1"
 
 # new
@@ -153,7 +153,7 @@ google-daggerHiltCompiler = { module = "com.google.dagger:hilt-compiler", versio
 google-daggerHiltCore = { module = "com.google.dagger:hilt-core", version.ref = "google-dagger" }
 google-daggerHiltTesting = { module = "com.google.dagger:hilt-android-testing", version.ref = "google-dagger" }
 google-firebase-analytics = { module = "com.google.firebase:firebase-analytics-ktx" }
-google-firebase-bom = "com.google.firebase:firebase-bom:32.7.4"
+google-firebase-bom = "com.google.firebase:firebase-bom:32.8.0"
 google-firebase-config = { module = "com.google.firebase:firebase-config-ktx" }
 google-firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx" }
 google-firebase-messaging = { module = "com.google.firebase:firebase-messaging-ktx" }
@@ -187,7 +187,7 @@ plugin-kotlin-serialization = { module = "org.jetbrains.kotlin:kotlin-serializat
 plugin-kotlinter = { module = "org.jmailen.gradle:kotlinter-gradle", version.ref = "plugin-kotlinter" }
 plugin-playPublisher = { module = "com.github.triplet.gradle:play-publisher", version.ref = "plugin-playPublisher" }
 plugin-square-sqldelight = { module = "com.squareup.sqldelight:gradle-plugin", version.ref = "square-sqlDelight" }
-robolectric = "org.robolectric:robolectric:4.11.1"
+robolectric = "org.robolectric:robolectric:4.12"
 square-leakcanary = "com.squareup.leakcanary:leakcanary-android:2.13"
 square-moshi = { module = "com.squareup.moshi:moshi", version.ref = "square-moshi" }
 square-moshiAdapters = { module = "com.squareup.moshi:moshi-adapters", version.ref = "square-moshi" }
