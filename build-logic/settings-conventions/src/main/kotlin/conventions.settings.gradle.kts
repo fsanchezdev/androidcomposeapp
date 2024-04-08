@@ -2,17 +2,20 @@
  * Searches for subprojects' `build.gradle` files and prints their Gradle project path.
  */
 private val discoverSubprojects: () -> Array<String> = {
-    rootDir.walkBottomUp().filter {
-        it.parent != rootDir.path &&
-            it.parent != rootDir.path + "/buildSrc" &&
-            it.parent != rootDir.path + "/build-logic" &&
-            it.parent != rootDir.path + "/build-logic/build-conventions" &&
-            it.parent != rootDir.path + "/build-logic/settings-conventions" &&
-            it.name == "build.gradle.kts"
-    }.map {
-        it.path.removePrefix(rootDir.path)
-            .removeSuffix("/build.gradle.kts")
-            .replace('/', ':')
+    val excludePaths = setOf(
+        rootDir.path,
+        "${rootDir.path}${File.separator}buildSrc",
+        "${rootDir.path}${File.separator}build-logic",
+        "${rootDir.path}${File.separator}build-logic${File.separator}build-conventions",
+        "${rootDir.path}${File.separator}build-logic${File.separator}settings-conventions"
+    )
+
+    rootDir.walkBottomUp().filter { file ->
+        file.name == "build.gradle.kts" && file.parent !in excludePaths
+    }.map { file ->
+        file.path.removePrefix("${rootDir.path}${File.separator}")
+            .removeSuffix("${File.separator}build.gradle.kts")
+            .replace(File.separator, ":")
     }.toList().toTypedArray()
 }
 
