@@ -34,12 +34,12 @@ private const val HTTP_ERROR_499 = 499
  *
  * @property client The Ktor HttpClient, annotated to be provided via dependency injection.
  */
-public class ApiManager @Inject constructor(
-    @Named("ApiClient") public val client: HttpClient
+internal class ApiManager @Inject constructor(
+    @Named("ApiClient") val client: HttpClient
 ) {
 
-    public companion object {
-        public const val URL: String = BuildConfig.BASE_URL
+    companion object {
+        const val URL: String = BuildConfig.BASE_URL
     }
 
     /**
@@ -49,7 +49,7 @@ public class ApiManager @Inject constructor(
      * @param request Custom HttpRequestBuilder to allow customization of the request.
      * @return [Either] A wrapper that holds either a successful [HttpResponse] or a [FailureBo].
      */
-    public suspend inline fun get(
+    suspend inline fun get(
         endPoint: String,
         request: HttpRequestBuilder = request {}
     ): Either<FailureBo, HttpResponse> {
@@ -75,7 +75,7 @@ public class ApiManager @Inject constructor(
      * @return [Either] A wrapper that holds either a successful [HttpResponse] or a [FailureBo].
      */
     @OptIn(InternalAPI::class)
-    public suspend inline fun <reified T> post(
+    suspend inline fun <reified T> post(
         endPoint: String,
         request: HttpRequestBuilder = request {}
     ): Either<FailureBo, HttpResponse> {
@@ -102,7 +102,7 @@ public class ApiManager @Inject constructor(
      * @return [Either] A wrapper that holds either a successful [HttpResponse] or a [FailureBo].
      */
     @OptIn(InternalAPI::class)
-    public suspend inline fun put(
+    suspend inline fun put(
         endPoint: String,
         request: HttpRequestBuilder = request {}
     ): Either<FailureBo, HttpResponse> {
@@ -129,7 +129,7 @@ public class ApiManager @Inject constructor(
      * @return [Either] A wrapper that holds either a successful [HttpResponse] or a [FailureBo].
      */
     @OptIn(InternalAPI::class)
-    public suspend inline fun patch(
+    suspend inline fun patch(
         endPoint: String,
         request: HttpRequestBuilder = request {}
     ): Either<FailureBo, HttpResponse> {
@@ -155,7 +155,7 @@ public class ApiManager @Inject constructor(
      * @param request Custom HttpRequestBuilder to allow customization of the request.
      * @return [Either] A wrapper that holds either a successful [HttpResponse] or a [FailureBo].
      */
-    public suspend inline fun delete(
+    suspend inline fun delete(
         endPoint: String,
         request: HttpRequestBuilder = request {}
     ): Either<FailureBo, HttpResponse> {
@@ -181,7 +181,7 @@ public class ApiManager @Inject constructor(
      * @param apiCall The suspend function representing the API call to be validated.
      * @return [Either] A wrapper that holds either a successful result of type [T] or a [FailureDto].
      */
-    public suspend fun <T> validate(
+    suspend fun <T> validate(
         apiCall: suspend () -> Either<FailureDto, T>
     ): Either<FailureDto, T> {
         return try {

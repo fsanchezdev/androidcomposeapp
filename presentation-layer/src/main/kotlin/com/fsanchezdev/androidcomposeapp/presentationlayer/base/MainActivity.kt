@@ -17,7 +17,7 @@ import com.fsanchezdev.androidcomposeapp.presentationlayer.navigation.AppNavigat
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-public class MainActivity : ComponentActivity() {
+internal class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)

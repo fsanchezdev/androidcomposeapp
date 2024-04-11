@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
-public abstract class BaseMviViewModel<
+internal abstract class BaseMviViewModel<
     User : BaseMviEvent.User,
     Effect : BaseMviEvent.Effect,
     UiState : BaseMviState
@@ -25,18 +25,18 @@ public abstract class BaseMviViewModel<
 ) : ViewModel() {
 
     private val _screenState: MutableState<UiState> = mutableStateOf(value = initialState)
-    public val screenState: State<UiState>
+    val screenState: State<UiState>
         get() = _screenState
 
     private val _effect: Channel<Effect> = Channel()
-    public val effect: Flow<Effect>
+    val effect: Flow<Effect>
         get() = _effect.receiveAsFlow()
 
     private val _failure = MutableSharedFlow<FailureBo>()
-    public val failure: SharedFlow<FailureBo>
+    val failure: SharedFlow<FailureBo>
         get() = _failure.asSharedFlow()
 
-    public abstract fun onEvent(event: User)
+    abstract fun onEvent(event: User)
 
     protected fun emitState(state: UiState.() -> UiState) {
         _screenState.value = state.invoke(screenState.value)

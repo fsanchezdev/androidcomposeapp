@@ -9,9 +9,9 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-public abstract class RepositoryModule {
+internal abstract class RepositoryModule {
     @Binds
-    public abstract fun bindPlaceHolderRepository(
+    abstract fun bindPlaceHolderRepository(
         placeHolderRepository: PlaceHolderRepository
     ): DomainLayerContract.Data.PlaceHolderRepository
 }

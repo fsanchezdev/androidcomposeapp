@@ -41,7 +41,7 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.onEach
 
 @Composable
-public fun FeatureScreen() {
+internal fun FeatureScreen() {
     val vm = hiltViewModel<FeatureViewModel>()
     val state: FeatureState by vm.screenState
 
@@ -54,7 +54,7 @@ public fun FeatureScreen() {
 }
 
 @Composable
-public fun FeatureScreen(
+internal fun FeatureScreen(
     state: FeatureState,
     onEvent: (FeatureUserEvents) -> Unit,
     effect: Flow<FeatureEffectEvents>,

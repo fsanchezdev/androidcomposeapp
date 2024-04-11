@@ -2,11 +2,11 @@ package com.fsanchezdev.androidcomposeapp.presentationlayer.feature.template.sta
 
 import com.fsanchezdev.androidcomposeapp.presentationlayer.base.compose.BaseMviEvent
 
-public sealed class FeatureUserEvents : BaseMviEvent.User {
-    public data class OnButtonClicked(val buttonTextGreeting: String) : FeatureUserEvents()
-    public data object OnNoNetworkRetryClick : FeatureUserEvents()
+internal sealed class FeatureUserEvents : BaseMviEvent.User {
+    data class OnButtonClicked(val buttonTextGreeting: String) : FeatureUserEvents()
+    data object OnNoNetworkRetryClick : FeatureUserEvents()
 }
 
-public sealed class FeatureEffectEvents : BaseMviEvent.Effect {
-    public data class ShowGreetings(val greeting: String) : FeatureEffectEvents()
+internal sealed class FeatureEffectEvents : BaseMviEvent.Effect {
+    data class ShowGreetings(val greeting: String) : FeatureEffectEvents()
 }

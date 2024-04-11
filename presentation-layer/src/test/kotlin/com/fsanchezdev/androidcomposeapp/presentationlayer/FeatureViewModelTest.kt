@@ -30,43 +30,43 @@ internal class FeatureViewModelTest {
 
     @Before
     fun setup() {
-        Dispatchers.setMain(testDispatcher)
-        mockPlaceHolderRepository = mockk(relaxed = true) // Inicializa el mock
+        Dispatchers.setMain(testDispatcher) // Set the main dispatcher to the test dispatcher
+        mockPlaceHolderRepository = mockk(relaxed = true) // Initialize the mock
 
-        // Preparar el mock para devolver un resultado específico
+        // Prepare the mock to return a specific result
         coEvery { mockPlaceHolderRepository.getPlaceHolderImage() } returns Either.Right(
             byteArrayOf()
         )
 
-        // Inicializar el ViewModel con el UseCase y el Repository mockeados
+        // Initialize the ViewModel with the mocked UseCase and Repository
         viewModel = FeatureViewModel(GetPlaceholderImageUseCase(mockPlaceHolderRepository))
     }
 
     @After
     fun tearDown() {
-        Dispatchers.resetMain() // Restablecer el Dispatcher principal
+        Dispatchers.resetMain() // Reset the main dispatcher
     }
 
     @Test
     fun `when OnButtonClicked event is sent, ShowGreetings effect is emitted`() = runTest {
         val events = mutableListOf<FeatureEffectEvents>()
 
-        // Empezar a recoger los efectos en una coroutine
+        // Start collecting effects in a coroutine
         val collectJob = launch(testDispatcher) {
             viewModel.effect.collect { events.add(it) }
         }
 
-        // Acción: enviar el evento
+        // Action: send the event
         viewModel.onEvent(FeatureUserEvents.OnButtonClicked("Hi, Test!"))
 
-        // Esperar a que se procesen las coroutines
+        // Wait for the coroutines to be processed
         advanceUntilIdle()
 
-        // Verificar que el efecto esperado se haya emitido
+        // Verify that the expected effect has been emitted
         assertTrue(
             events.contains(FeatureEffectEvents.ShowGreetings("Hi, Test!"))
         )
 
-        collectJob.cancel() // Cancelar la recogida de efectos
+        collectJob.cancel() // Cancel the effect collection
     }
 }

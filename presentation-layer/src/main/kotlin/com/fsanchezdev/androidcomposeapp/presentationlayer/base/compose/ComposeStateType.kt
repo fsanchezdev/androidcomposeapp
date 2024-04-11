@@ -1,6 +1,6 @@
 package com.fsanchezdev.androidcomposeapp.presentationlayer.base.compose
 
-public sealed class ComposeStateType {
-    public data object Loading : ComposeStateType()
-    public data object Render : ComposeStateType()
+internal sealed class ComposeStateType {
+    data object Loading : ComposeStateType()
+    data object Render : ComposeStateType()
 }

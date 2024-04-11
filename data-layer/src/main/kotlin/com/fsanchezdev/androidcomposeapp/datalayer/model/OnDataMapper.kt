@@ -6,7 +6,7 @@ import java.net.HttpURLConnection
 /**
  * Maps a [FailureDto] into a [FailureBo]
  */
-public fun FailureDto.toFailureBo(): FailureBo = when (this) {
+internal fun FailureDto.toFailureBo(): FailureBo = when (this) {
     FailureDto.NoNetwork -> FailureBo.NoNetwork
     FailureDto.InputParamsError -> FailureBo.InputParamsError
     FailureDto.NoData -> FailureBo.NoData

@@ -1,5 +1,5 @@
 package com.fsanchezdev.androidcomposeapp.datalayer.api
 
-public enum class EndPoint(public val path: String) {
+internal enum class EndPoint(val path: String) {
     GET_IMAGE("200/300")
 }

@@ -11,26 +11,26 @@ import javax.inject.Inject
 /**
  * This interceptor is used for check network and throws a custom exception is needed
  */
-public class ConnectivityInterceptorPlugin @Inject constructor(
-    public val connectivityDataSource: ConnectivityDataSource
+internal class ConnectivityInterceptorPlugin @Inject constructor(
+    val connectivityDataSource: ConnectivityDataSource
 ) {
-    public class Configuration {
-        public lateinit var configConnectivityDataSource: ConnectivityDataSource
+    class Configuration {
+        lateinit var configConnectivityDataSource: ConnectivityDataSource
     }
 
-    public companion object Feature :
+    companion object Feature :
         HttpClientPlugin<Configuration, ConnectivityInterceptorPlugin> {
-        public override val key: AttributeKey<ConnectivityInterceptorPlugin> =
+        override val key: AttributeKey<ConnectivityInterceptorPlugin> =
             AttributeKey("ConnectivityInterceptorPlugin")
 
-        public override fun prepare(
+        override fun prepare(
             block: Configuration.() -> Unit
         ): ConnectivityInterceptorPlugin {
             val config = Configuration().apply(block)
             return ConnectivityInterceptorPlugin(config.configConnectivityDataSource)
         }
 
-        public override fun install(plugin: ConnectivityInterceptorPlugin, scope: HttpClient) {
+        override fun install(plugin: ConnectivityInterceptorPlugin, scope: HttpClient) {
             scope.sendPipeline.intercept(HttpSendPipeline.Monitoring) {
                 if (!plugin.connectivityDataSource.checkNetworkConnectionAvailability()) {
                     throw NoConnectivityException()
@@ -43,4 +43,4 @@ public class ConnectivityInterceptorPlugin @Inject constructor(
 /**
  * Custom [IOException] for no connectivity.
  */
-public class NoConnectivityException : IOException("No network connectivity")
+internal class NoConnectivityException : IOException("No network connectivity")

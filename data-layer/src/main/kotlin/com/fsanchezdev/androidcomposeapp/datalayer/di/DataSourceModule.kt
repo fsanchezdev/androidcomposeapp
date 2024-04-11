@@ -11,15 +11,15 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-public abstract class DataSourceModule {
+internal abstract class DataSourceModule {
 
     @Binds
-    public abstract fun bindConnectivityDataSource(
+    abstract fun bindConnectivityDataSource(
         connectivityDataSource: ConnectivityDataSourceImpl
     ): ConnectivityDataSource
 
     @Binds
-    public abstract fun bindPlaceHolderRemoteDataSource(
+    abstract fun bindPlaceHolderRemoteDataSource(
         placeHolderRemoteDataSource: PlaceHolderRemoteDataSource
     ): DataLayerContract.PlaceHolderDataSource.Remote
 }

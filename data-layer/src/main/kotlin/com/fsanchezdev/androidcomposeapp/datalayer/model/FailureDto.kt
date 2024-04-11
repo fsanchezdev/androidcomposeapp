@@ -6,21 +6,21 @@ import kotlinx.serialization.json.JsonNames
 /**
  * A class which models any failure coming from the 'data-layer'
  */
-public sealed class FailureDto {
-    public data object NoNetwork : FailureDto()
-    public data object Unknown : FailureDto()
-    public data object InputParamsError : FailureDto()
-    public data object NoData : FailureDto()
-    public class Unauthorized(public val code: String?, public val message: String?) : FailureDto()
-    public class Forbidden(public val code: String?, public val message: String?) : FailureDto()
-    public class ServerError(public val code: String?, public val message: String?) :
+internal sealed class FailureDto {
+    data object NoNetwork : FailureDto()
+    data object Unknown : FailureDto()
+    data object InputParamsError : FailureDto()
+    data object NoData : FailureDto()
+    class Unauthorized(val code: String?, val message: String?) : FailureDto()
+    class Forbidden(val code: String?, val message: String?) : FailureDto()
+    class ServerError(val code: String?, val message: String?) :
         FailureDto()
-    public open class Error
+    open class Error
     @OptIn(ExperimentalSerializationApi::class)
     constructor(
-        @JsonNames("code") public val code: Int,
-        @JsonNames("description") public val message: String?
+        @JsonNames("code") val code: Int,
+        @JsonNames("description") val message: String?
     ) : FailureDto()
 
-    public open class SpecificFailure<T>(public val error: T) : FailureDto()
+    open class SpecificFailure<T>(val error: T) : FailureDto()
 }
