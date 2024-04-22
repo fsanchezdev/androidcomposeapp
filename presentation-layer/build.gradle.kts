@@ -49,4 +49,6 @@ dependencies {
     testImplementation(libs.square.turbine)
     implementation(libs.androidx.coreSplashscreen)
     implementation(libs.google.daggerHiltAndroid)
+    implementation(libs.coilCompose)
+  //  implementation(libs.androidcomposeapp.android.application.jacoco)
 }

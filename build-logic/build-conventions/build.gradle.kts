@@ -8,3 +8,11 @@ dependencies {
     implementation(libs.plugin.kotlinter)
     implementation(libs.plugin.google.ksp)
 }
+gradlePlugin {
+    plugins {
+        register("androidLibraryJacoco") {
+            id = "androidcomposeapp.android.library.jacoco"
+            implementationClass = "AndroidLibraryJacocoConventionPlugin"
+        }
+    }
+}
