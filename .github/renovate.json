@@ -7,7 +7,7 @@
     "main"
   ],
   "schedule": [
-    "before 4am on Monday"
+    "before 4am on the first day of the month"
   ],
   "automergeStrategy": "merge-commit",
   "packageRules": [
