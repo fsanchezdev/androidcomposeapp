@@ -13,7 +13,7 @@ nameSpacePresentation = "com.fsanchezdev.androidcomposeapp.presentationlayer"
 androidx-activity = "1.9.0"
 androidx-compose-compiler = "1.5.12"
 androidx-hilt = "1.2.0"
-androidx-lifecycle = "2.7.0"
+androidx-lifecycle = "2.8.1"
 androidx-navigation = "2.7.7"
 androidx-test = "1.5.0"
 androidx-testEspresso = "3.5.1"
@@ -31,21 +31,21 @@ plugin-dependencyUpdates = "0.51.0"
 plugin-google-firebase-appDistribution = "4.2.0"
 plugin-google-firebase-crashlytics = "2.9.9"
 plugin-google-ksp = "1.9.23-1.0.20"
-plugin-google-services = "4.4.1"
+plugin-google-services = "4.4.2"
 plugin-kotlinter = "4.3.0"
 plugin-playPublisher = "3.9.1"
 square-moshi = "1.15.1"
 square-okhttp = "4.12.0"
 square-retrofit = "2.11.0"
 square-sqlDelight = "1.5.5"
-compose-BOM = "2024.04.01"
+compose-BOM = "2024.05.00"
 constraintLayoutCommpose = "1.0.1"
 
 # new
-core-ktx = "1.13.0"
+core-ktx = "1.13.1"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
-appcompat = "1.6.1"
+appcompat = "1.7.0"
 material = "1.9.0"
 
 [plugins]
@@ -101,7 +101,7 @@ core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 androidx-coreGoogleShortcuts = "androidx.core:core-google-shortcuts:1.1.0"
 androidx-coreSplashscreen = "androidx.core:core-splashscreen:1.0.1"
 androidx-coreTesting = "androidx.arch.core:core-testing:2.2.0"
-androidx-datastore = "androidx.datastore:datastore:1.1.0"
+androidx-datastore = "androidx.datastore:datastore:1.1.1"
 androidx-glance-glanceAppwidget = "androidx.glance:glance-appwidget:1.0.0"
 androidx-hiltCompiler = { module = "androidx.hilt:hilt-compiler", version.ref = "androidx-hilt" }
 androidx-hiltNav = { module = "androidx.hilt:hilt-navigation", version.ref = "androidx-hilt" }
@@ -129,7 +129,7 @@ androidx-testOrchestrator = "androidx.test:orchestrator:1.4.2"
 androidx-testRules = { module = "androidx.test:rules", version.ref = "androidx-test" }
 androidx-testRunner = "androidx.test:runner:1.5.2"
 androidx-uiautomator = "androidx.test.uiautomator:uiautomator:2.3.0"
-androidx-webkit = "androidx.webkit:webkit:1.10.0"
+androidx-webkit = "androidx.webkit:webkit:1.11.0"
 androidx-workRuntime = { module = "androidx.work:work-runtime-ktx", version.ref = "androidx-workManager" }
 androidx-workTesting = { module = "androidx.work:work-testing", version.ref = "androidx-workManager" }
 coil = { module = "io.coil-kt:coil", version.ref = "coil" }
@@ -159,7 +159,7 @@ google-firebase-crashlytics = { module = "com.google.firebase:firebase-crashlyti
 google-firebase-messaging = { module = "com.google.firebase:firebase-messaging-ktx" }
 google-glance-appwidgetHost = { module = "com.google.android.glance.tools:appwidget-host", version.ref = "google-glance-tooling" }
 google-glance-appwidgetViewer = { module = "com.google.android.glance.tools:appwidget-viewer", version.ref = "google-glance-tooling" }
-google-play-location = "com.google.android.gms:play-services-location:21.2.0"
+google-play-location = "com.google.android.gms:play-services-location:21.3.0"
 google-play-maps = "com.google.android.gms:play-services-maps:18.2.0"
 google-play-mapsKtx = "com.google.maps.android:maps-ktx:5.0.0"
 inject = "javax.inject:javax.inject:1"
@@ -187,7 +187,7 @@ plugin-kotlin-serialization = { module = "org.jetbrains.kotlin:kotlin-serializat
 plugin-kotlinter = { module = "org.jmailen.gradle:kotlinter-gradle", version.ref = "plugin-kotlinter" }
 plugin-playPublisher = { module = "com.github.triplet.gradle:play-publisher", version.ref = "plugin-playPublisher" }
 plugin-square-sqldelight = { module = "com.squareup.sqldelight:gradle-plugin", version.ref = "square-sqlDelight" }
-robolectric = "org.robolectric:robolectric:4.12.1"
+robolectric = "org.robolectric:robolectric:4.12.2"
 square-leakcanary = "com.squareup.leakcanary:leakcanary-android:2.14"
 square-moshi = { module = "com.squareup.moshi:moshi", version.ref = "square-moshi" }
 square-moshiAdapters = { module = "com.squareup.moshi:moshi-adapters", version.ref = "square-moshi" }
