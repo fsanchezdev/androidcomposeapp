@@ -49,6 +49,14 @@
       "platformAutomerge": false,
       "matchManagers": ["github-actions"],
       "groupName": "github-actions-workflows"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchManagers": ["gradle-wrapper"],
+      "groupName": "gradle-wrapper-updates",
+      "commitMessagePrefix": "Gradle Wrapper",
+      "commitMessageExtra": "Update to {{newVersion}}"
     }
   ],
   "assignees": ["fsanchezdev"],
