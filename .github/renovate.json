@@ -1,0 +1,65 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices"
+  ],
+  "baseBranches": [
+    "main"
+  ],
+  "schedule": [
+    "before 4am on the first day of the month"
+  ],
+  "automergeStrategy": "merge-commit",
+  "packageRules": [
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "groupName": "dependencies-minor-patch-digest"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchPackagePatterns": [
+        "^com.android.tools.build",
+        "^com.android.application",
+        "^com.android.library"
+      ],
+      "groupName": "android-gradle-plugin",
+      "commitMessagePrefix": "AGP",
+      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchPackagePatterns" : [
+        "^org.jetbrains.kotlin",
+        "^com.google.devtools.ksp",
+        "^androidx.compose.compiler"
+      ],
+      "groupName" : "kotlin related dependencies"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions-workflows"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchManagers": ["gradle-wrapper"],
+      "groupName": "gradle-wrapper-updates",
+      "commitMessagePrefix": "Gradle Wrapper",
+      "commitMessageExtra": "Update to {{newVersion}}"
+    }
+  ],
+  "assignees": ["fsanchezdev"],
+  "semanticCommitScope": "{{parentDir}}",
+  "separateMajorMinor": true
+}
