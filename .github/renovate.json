@@ -42,6 +42,15 @@
       "platformAutomerge": false,
       "matchManagers": ["github-actions"],
       "groupName": "github-actions-workflows"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchPackagePatterns": [
+        "^com.android.tools.build:gradle$",
+        "^gradle-wrapper$"
+      ],
+      "groupName": "Gradle related dependencies"
     }
   ],
   "assignees": ["fsanchezdev"],
