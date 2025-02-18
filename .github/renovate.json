@@ -10,11 +10,6 @@
     "before 4am on the first day of the month"
   ],
   "automergeStrategy": "merge-commit",
-  "enabledManagers": [
-    "gradle",
-    "gradle-wrapper",
-    "github-actions"
-  ],
   "packageRules": [
     {
       "automerge": false,
@@ -26,6 +21,18 @@
         "digest"
       ],
       "groupName": "dependencies-minor-patch-digest"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchPackagePatterns": [
+        "^com.android.tools.build",
+        "^com.android.application",
+        "^com.android.library"
+      ],
+      "groupName": "android-gradle-plugin",
+      "commitMessagePrefix": "AGP",
+      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
     },
     {
       "automerge": false,
@@ -47,10 +54,11 @@
       "automerge": false,
       "platformAutomerge": false,
       "matchPackagePatterns": [
-        "^com.android.tools.build:gradle$",
-        "^gradle-wrapper$"
+        "com.android.tools.build:gradle"
       ],
-      "groupName": "Gradle related dependencies"
+      "matchManagers": ["gradle-wrapper"],
+      "groupName": "gradle wrapper",
+      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
     }
   ],
   "assignees": ["fsanchezdev"],
