@@ -10,6 +10,11 @@
     "before 4am on the first day of the month"
   ],
   "automergeStrategy": "merge-commit",
+  "enabledManagers": [
+    "gradle",
+    "gradle-wrapper",
+    "github-actions"
+  ],
   "packageRules": [
     {
       "automerge": false,
