@@ -41,22 +41,14 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchPackagePatterns": [
-        "^com.android.tools.build",
-        "^com.android.application",
-        "^com.android.library"
-      ],
-      "matchManagers": ["gradle"],
-      "groupName": "android-gradle-plugin",
-      "commitMessagePrefix": "AGP",
-      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
-      "matchManagers": ["gradle-wrapper"],
-      "groupName": "android-gradle-plugin",
-      "commitMessagePrefix": "AGP"
+        "matchPackagePatterns": [
+          "^com.android.tools.build",
+          "^com.android.application",
+          "^com.android.library"
+        ],
+        "matchPackageNames": ["gradle"],
+        "matchPaths": ["gradle/wrapper/gradle-wrapper.properties"],
+      "groupName": "gradle related dependencies"
     }
   ],
   "assignees": ["fsanchezdev"],
