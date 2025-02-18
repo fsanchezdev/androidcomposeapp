@@ -46,11 +46,17 @@
         "^com.android.application",
         "^com.android.library"
       ],
-      "matchPackageNames": ["gradle"],
-      "matchPaths": ["gradle/wrapper/gradle-wrapper.properties"],
+      "matchManagers": ["gradle"],
       "groupName": "android-gradle-plugin",
       "commitMessagePrefix": "AGP",
       "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchManagers": ["gradle-wrapper"],
+      "groupName": "android-gradle-plugin",
+      "commitMessagePrefix": "AGP"
     }
   ],
   "assignees": ["fsanchezdev"],
