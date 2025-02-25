@@ -14,16 +14,23 @@
     {
       "automerge": false,
       "platformAutomerge": false,
+      "matchManagers": ["gradle, gradle-wrapper"],
+      "groupName": "android-gradle-updates",
+      "commitMessagePrefix": "Update",
+      "commitMessageAction": "Update Gradle Wrapper"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
       "matchPackagePatterns": [
         "^com.android.tools.build",
         "^com.android.application",
-        "^com.android.library",
-        "gradle"
+        "^com.android.library"
       ],
-      "matchManagers": ["gradle", "gradle-wrapper"],
+      "matchManagers": ["gradle"],
       "groupName": "android-gradle-updates",
       "commitMessagePrefix": "Update",
-      "commitMessageAction": "Update Gradle related dependencies"
+      "commitMessageAction": "Update Android Gradle Plugin"
     },
     {
       "automerge": false,
@@ -34,8 +41,7 @@
         "pin",
         "digest"
       ],
-      "excludePackageNames": ["gradle"],
-      "excludePackagePatterns": ["gradle"],
+      "excludeManagers": ["gradle, gradle-wrapper"],
       "groupName": "dependencies-minor-patch-digest"
     },
     {
