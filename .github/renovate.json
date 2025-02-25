@@ -14,17 +14,6 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
-      ],
-      "groupName": "dependencies-minor-patch-digest"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
       "matchPackagePatterns": [
         "^com.android.tools.build",
         "^com.android.application",
@@ -34,6 +23,17 @@
       "groupName": "android-gradle-updates",
       "commitMessagePrefix": "Update",
       "commitMessageAction": "Update Gradle related dependencies"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "groupName": "dependencies-minor-patch-digest"
     },
     {
       "automerge": false,
