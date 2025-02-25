@@ -17,7 +17,8 @@
       "matchPackagePatterns": [
         "^com.android.tools.build",
         "^com.android.application",
-        "^com.android.library"
+        "^com.android.library",
+        "gradle"
       ],
       "matchManagers": ["gradle", "gradle-wrapper"],
       "groupName": "android-gradle-updates",
@@ -33,6 +34,8 @@
         "pin",
         "digest"
       ],
+      "excludePackageNames": ["gradle"],
+      "excludePackagePatterns": ["gradle"],
       "groupName": "dependencies-minor-patch-digest"
     },
     {
