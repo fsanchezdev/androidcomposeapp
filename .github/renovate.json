@@ -30,9 +30,10 @@
         "^com.android.application",
         "^com.android.library"
       ],
-      "groupName": "android-gradle-plugin",
-      "commitMessagePrefix": "AGP",
-      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
+      "matchManagers": ["gradle", "gradle-wrapper"],
+      "groupName": "android-gradle-updates",
+      "commitMessagePrefix": "Update",
+      "commitMessageAction": "Update Gradle related dependencies"
     },
     {
       "automerge": false,
@@ -49,16 +50,6 @@
       "platformAutomerge": false,
       "matchManagers": ["github-actions"],
       "groupName": "github-actions-workflows"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
-      "matchPackagePatterns": [
-        "com.android.tools.build:gradle"
-      ],
-      "matchManagers": ["gradle-wrapper"],
-      "groupName": "gradle wrapper",
-      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
     }
   ],
   "assignees": ["fsanchezdev"],
