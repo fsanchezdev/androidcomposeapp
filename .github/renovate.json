@@ -19,11 +19,14 @@
         "^com.android.application",
         "^com.android.library"
       ],
-      "matchPackageNames": ["gradle"],
-      "matchManagers": ["gradle", "gradle-wrapper"],
-      "groupName": "android-gradle-updates",
-      "commitMessagePrefix": "Update",
-      "commitMessageAction": "Update Android Gradle Plugin and Gradle Wrapper"
+      "groupName": "android-gradle-plugin"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchManagers": ["gradle-wrapper"],
+      "groupName": "gradle-wrapper",
+      "commitMessagePrefix": "chore(gradle)"
     },
     {
       "automerge": false,
@@ -34,7 +37,8 @@
         "pin",
         "digest"
       ],
-      "excludeManagers": ["gradle", "gradle-wrapper"],
+      "excludePackageNames": ["gradle"],
+      "excludePackagePatterns": ["gradle"],
       "groupName": "dependencies-minor-patch-digest"
     },
     {
@@ -56,5 +60,10 @@
   ],
   "assignees": ["fsanchezdev"],
   "semanticCommitScope": "{{parentDir}}",
-  "separateMajorMinor": true
+  "separateMajorMinor": true,
+  "enabledManagers": [
+    "gradle",
+    "gradle-wrapper",
+    "github-actions"
+  ]
 }
