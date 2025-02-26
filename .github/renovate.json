@@ -19,7 +19,11 @@
     },
     {
       "matchManagers": ["gradle-wrapper"],
-      "groupName": "Gradle Wrapper"
+      "groupName": "Gradle Wrapper",
+      "separateMinorPatch": true,
+      "separateMultipleMajor": true,
+      "separateMultipleMinor": true,
+      "separateMultiplePatch": true
     },
     {
       "automerge": false,
