@@ -12,21 +12,14 @@
   "automergeStrategy": "merge-commit",
   "packageRules": [
     {
-      "automerge": false,
-      "platformAutomerge": false,
-      "matchPackagePatterns": [
-        "^com.android.tools.build",
-        "^com.android.application",
-        "^com.android.library"
+      "matchPackageNames": [
+        "com.android.tools.build:gradle"
       ],
-      "groupName": "android-gradle-plugin"
+      "groupName": "Android Gradle Plugin"
     },
     {
-      "automerge": false,
-      "platformAutomerge": false,
       "matchManagers": ["gradle-wrapper"],
-      "groupName": "gradle-wrapper",
-      "commitMessagePrefix": "chore(gradle)"
+      "groupName": "Gradle Wrapper"
     },
     {
       "automerge": false,
