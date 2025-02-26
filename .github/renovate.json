@@ -14,19 +14,6 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchPackagePatterns": [
-        "^com.android.tools.build",
-        "^com.android.application",
-        "^com.android.library"
-      ],
-      "matchManagers": ["gradle", "gradle-wrapper"],
-      "groupName": "android-gradle-updates",
-      "commitMessagePrefix": "Update",
-      "commitMessageAction": "Update Android Gradle Plugin and Gradle Wrapper"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
       "matchUpdateTypes": [
         "minor",
         "patch",
@@ -51,6 +38,19 @@
       "platformAutomerge": false,
       "matchManagers": ["github-actions"],
       "groupName": "github-actions-workflows"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchPackagePatterns": [
+        "^com.android.tools.build",
+        "^com.android.application",
+        "^com.android.library"
+      ],
+      "matchManagers": ["gradle", "gradle-wrapper"],
+      "groupName": "android-gradle-updates",
+      "commitMessagePrefix": "Update",
+      "commitMessageAction": "Update Android Gradle Plugin and Gradle Wrapper"
     }
   ],
   "assignees": ["fsanchezdev"],
