@@ -55,6 +55,7 @@
         "^com.google.devtools.ksp",
         "^androidx.compose.compiler"
       ],
+      "excludeManagers": ["gradle-wrapper"],
       "matchManagers": ["gradle"],
       "groupName": "dependencies-minor-patch-digest"
     },
