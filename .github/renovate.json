@@ -1,7 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:best-practices"
+    "config:best-practices",
+    ":disableDigestUpdates"
   ],
   "baseBranches": [
     "develop"
@@ -19,11 +20,7 @@
     },
     {
       "matchManagers": ["gradle-wrapper"],
-      "groupName": "Gradle Wrapper",
-      "separateMinorPatch": true,
-      "separateMultipleMajor": true,
-      "separateMultipleMinor": true,
-      "separateMultiplePatch": true
+      "groupName": "Gradle Wrapper"
     },
     {
       "automerge": false,
