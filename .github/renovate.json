@@ -41,27 +41,6 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
-      ],
-      "excludePackagePatterns": [
-        "^com.android.tools.build",
-        "^com.android.application", 
-        "^com.android.library",
-        "^org.jetbrains.kotlin",
-        "^com.google.devtools.ksp",
-        "^androidx.compose.compiler"
-      ],
-      "excludeManagers": ["gradle-wrapper"],
-      "matchManagers": ["gradle"],
-      "groupName": "dependencies-minor-patch-digest"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
       "matchManagers": ["github-actions"],
       "groupName": "github-actions-workflows"
     }
