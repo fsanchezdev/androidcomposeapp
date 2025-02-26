@@ -13,22 +13,18 @@
   "automergeStrategy": "merge-commit",
   "packageRules": [
     {
+      "description": "Separate PR for Gradle Wrapper",
+      "matchManagers": ["gradle-wrapper"],
+      "groupName": "Gradle Wrapper",
+      "separateMinorPatch": true,
+      "prPriority": 5
+    },
+    {
       "automerge": false,
       "platformAutomerge": false,
       "matchPackageNames": [
         "com.android.tools.build:gradle"
       ],
-      "groupName": "Android Gradle Plugin"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
-      "matchManagers": ["gradle-wrapper"],
-      "groupName": "Gradle Wrapper",
-      "separateMinorPatch": true
-    },
-    {
-      "matchPackageNames": ["com.android.tools.build:gradle"],
       "groupName": "Android Gradle Plugin"
     },
     {
