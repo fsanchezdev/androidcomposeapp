@@ -23,6 +23,18 @@
       "groupName": "Gradle Wrapper"
     },
     {
+      "matchManagers": ["gradle-wrapper"],
+      "groupName": "Gradle Wrapper",
+      "separateMinorPatch": true,
+      "separateMultipleMajor": true,
+      "separateMultipleMinor": true,
+      "separateMultiplePatch": true
+    },
+    {
+      "matchPackageNames": ["com.android.tools.build:gradle"],
+      "groupName": "Android Gradle Plugin"
+    },
+    {
       "automerge": false,
       "platformAutomerge": false,
       "matchPackagePatterns": [
@@ -37,6 +49,17 @@
       "platformAutomerge": false,
       "matchManagers": ["github-actions"],
       "groupName": "github-actions-workflows"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "groupName": "dependencies-minor-patch-digest"
     }
   ],
   "assignees": ["fsanchezdev"],
