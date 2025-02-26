@@ -46,6 +46,20 @@
       "platformAutomerge": false,
       "matchManagers": ["github-actions"],
       "groupName": "github-actions-workflows"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "matchManagers": [
+        "gradle"
+      ],
+      "groupName": "dependencies-minor-patch-digest"
     }
   ],
   "assignees": ["fsanchezdev"],
