@@ -19,9 +19,7 @@
       "matchManagers": [
         "gradle-wrapper"
       ],
-      "groupName": "Gradle Wrapper",
-      "separateMinorPatch": true,
-      "prPriority": 5
+      "groupName": "Gradle Wrapper"
     },
     {
       "automerge": false,
@@ -48,20 +46,6 @@
         "github-actions"
       ],
       "groupName": "github-actions-workflows"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
-      ],
-      "matchManagers": [
-        "gradle"
-      ],
-      "groupName": "dependencies-minor-patch-digest"
     }
   ],
   "assignees": [
@@ -70,7 +54,6 @@
   "semanticCommitScope": "{{parentDir}}",
   "separateMajorMinor": true,
   "enabledManagers": [
-    "gradle",
     "gradle-wrapper",
     "github-actions"
   ]
