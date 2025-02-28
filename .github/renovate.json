@@ -16,7 +16,10 @@
       "automerge": false,
       "platformAutomerge": false,
       "description": "Separate PR for Gradle Wrapper",
-      "matchManagers": ["gradle", "gradle-wrapper"],
+      "matchManagers": [
+        "gradle",
+        "gradle-wrapper"
+      ],
       "groupName": "Gradle Wrapper",
       "separateMinorPatch": true,
       "prPriority": 5
@@ -42,7 +45,9 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchManagers": ["github-actions"],
+      "matchManagers": [
+        "github-actions"
+      ],
       "groupName": "github-actions-workflows"
     },
     {
@@ -57,7 +62,9 @@
       "groupName": "dependencies-minor-patch-digest"
     }
   ],
-  "assignees": ["fsanchezdev"],
+  "assignees": [
+    "fsanchezdev"
+  ],
   "semanticCommitScope": "{{parentDir}}",
   "separateMajorMinor": true,
   "enabledManagers": [
