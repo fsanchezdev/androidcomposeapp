@@ -17,7 +17,6 @@
       "platformAutomerge": false,
       "description": "Separate PR for Gradle Wrapper",
       "matchManagers": [
-        "gradle",
         "gradle-wrapper"
       ],
       "groupName": "Gradle Wrapper",
