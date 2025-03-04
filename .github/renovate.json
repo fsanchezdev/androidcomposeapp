@@ -11,37 +11,14 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "description": "Separate PR for Gradle Wrapper",
+      "description": "Gradle Wrapper updates",
       "matchManagers": [
         "gradle-wrapper"
       ],
+      "matchFiles": [
+        "gradle/wrapper/gradle-wrapper.properties"
+      ],
       "groupName": "Gradle Wrapper"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
-      "matchPackageNames": [
-        "com.android.tools.build:gradle"
-      ],
-      "groupName": "Android Gradle Plugin"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
-      "matchPackagePatterns": [
-        "^org.jetbrains.kotlin",
-        "^com.google.devtools.ksp",
-        "^androidx.compose.compiler"
-      ],
-      "groupName": "kotlin related dependencies"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
-      "matchManagers": [
-        "github-actions"
-      ],
-      "groupName": "github-actions-workflows"
     }
   ],
   "assignees": [
@@ -50,7 +27,6 @@
   "semanticCommitScope": "{{parentDir}}",
   "separateMajorMinor": true,
   "enabledManagers": [
-    "gradle-wrapper",
-    "github-actions"
+    "gradle-wrapper"
   ]
 }
