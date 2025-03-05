@@ -21,13 +21,9 @@
       "matchManagers": [
         "gradle-wrapper"
       ],
-      "matchPackageNames": [
-        "gradle"
+      "matchPackagePatterns": [
+        "^gradle$"
       ],
-      "matchFileNames": [
-        "gradle/wrapper/gradle-wrapper.properties"
-      ],
-      "groupName": "Gradle Wrapper",
       "enabled": true
     },
     {
@@ -43,5 +39,10 @@
     "fsanchezdev"
   ],
   "semanticCommitScope": "{{parentDir}}",
-  "separateMajorMinor": true
+  "separateMajorMinor": true,
+  "extends": [
+    "config:base",
+    ":disableRateLimiting",
+    ":rebaseStalePrs"
+  ]
 }
