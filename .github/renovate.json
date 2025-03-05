@@ -7,31 +7,37 @@
     "before 4am on the first day of the month"
   ],
   "automergeStrategy": "merge-commit",
+  "enabledManagers": [
+    "gradle-wrapper"
+  ],
+  "ignoreDeps": ["*"],
   "packageRules": [
     {
-      "automerge": false,
-      "platformAutomerge": false,
-      "description": "Gradle Wrapper updates",
+      "description": "Only update Gradle Wrapper",
       "matchManagers": [
-        "gradle",
         "gradle-wrapper"
+      ],
+      "matchPackageNames": [
+        "gradle"
       ],
       "matchFileNames": [
         "gradle/wrapper/gradle-wrapper.properties"
       ],
-      "groupName": "Gradle Wrapper"
+      "groupName": "Gradle Wrapper",
+      "enabled": true
+    },
+    {
+      "matchManagers": ["gradle"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "enabled": false
     }
   ],
   "assignees": [
     "fsanchezdev"
   ],
   "semanticCommitScope": "{{parentDir}}",
-  "separateMajorMinor": true,
-  "enabledManagers": [
-    "gradle",
-    "gradle-wrapper"
-  ],
-  "fileMatch": [
-    "gradle/wrapper/gradle-wrapper.properties"
-  ]
+  "separateMajorMinor": true
 }
