@@ -10,12 +10,19 @@
     {
       "description": "Update Compose dependencies",
       "matchPackagePatterns": [
-        "^androidx\\.compose",
-        "^org\\.jetbrains\\.compose"
+        "^androidx\\.compose\\.",
+        "^org\\.jetbrains\\.compose\\."
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch"
       ],
       "enabled": true,
       "groupName": "compose dependencies",
-      "prBodyNotes": ["Update Compose dependencies"]
+      "prBodyNotes": ["Update Compose dependencies"],
+      "branchPrefix": "renovate/compose-",
+      "labels": ["compose-update"]
     }
   ],
   "ignoreDeps": ["*"],
