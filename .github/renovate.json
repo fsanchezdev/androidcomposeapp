@@ -4,7 +4,7 @@
     "develop"
   ],
   "enabledManagers": [
-    "gradle-wrapper"
+    "gradle"
   ],
   "fileMatch": [
     "(^|/)gradle/wrapper/gradle-wrapper\\.properties$"
@@ -14,7 +14,7 @@
     {
       "description": "Only update Gradle Wrapper",
       "matchManagers": [
-        "gradle-wrapper"
+        "gradle"
       ],
       "matchPackagePatterns": [
         "^gradle$"
