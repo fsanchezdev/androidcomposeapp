@@ -15,6 +15,9 @@
       "matchManagers": [
         "gradle-wrapper"
       ],
+      "matchFileNames": [
+        "gradle/wrapper/gradle-wrapper.properties"
+      ],
       "groupName": "Gradle Wrapper"
     }
   ],
@@ -25,5 +28,8 @@
   "separateMajorMinor": true,
   "enabledManagers": [
     "gradle-wrapper"
+  ],
+  "fileMatch": [
+    "gradle/wrapper/gradle-wrapper.properties"
   ]
 }
