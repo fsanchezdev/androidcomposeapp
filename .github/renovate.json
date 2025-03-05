@@ -8,16 +8,14 @@
   ],
   "packageRules": [
     {
-      "description": "Update Kotlin major versions",
+      "description": "Update Compose dependencies",
       "matchPackagePatterns": [
-        "^org\\.jetbrains\\.kotlin"
-      ],
-      "matchUpdateTypes": [
-        "major"
+        "^androidx\\.compose",
+        "^org\\.jetbrains\\.compose"
       ],
       "enabled": true,
-      "groupName": "kotlin major updates",
-      "prBodyNotes": ["Update Kotlin from {{{currentVersion}}} to {{{newVersion}}}"]
+      "groupName": "compose dependencies",
+      "prBodyNotes": ["Update Compose dependencies"]
     }
   ],
   "ignoreDeps": ["*"],
