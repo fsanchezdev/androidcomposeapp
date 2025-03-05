@@ -13,6 +13,7 @@
       "platformAutomerge": false,
       "description": "Gradle Wrapper updates",
       "matchManagers": [
+        "gradle",
         "gradle-wrapper"
       ],
       "matchFileNames": [
