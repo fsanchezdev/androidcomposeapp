@@ -11,6 +11,10 @@
     "gradle-wrapper"
   ],
   "ignoreDeps": ["*"],
+  "fileMatch": [
+    "(^|/)gradle/wrapper/gradle-wrapper\\.properties$"
+  ],
+  "versioning": "gradle",
   "packageRules": [
     {
       "description": "Only update Gradle Wrapper",
