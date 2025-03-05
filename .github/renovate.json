@@ -4,21 +4,25 @@
     "develop"
   ],
   "enabledManagers": [
-    "github-actions"
+    "gradle"
   ],
-  "ignoreDeps": ["*"],
   "packageRules": [
     {
-      "description": "Only update Gradle Wrapper",
-      "matchManagers": [
-        "github-actions"
+      "description": "Update Kotlin major versions",
+      "matchPackagePatterns": [
+        "^org\\.jetbrains\\.kotlin"
+      ],
+      "matchUpdateTypes": [
+        "major"
       ],
       "enabled": true,
-      "prBodyNotes": ["Update Gradle  from {{{currentVersion}}} to {{{newVersion}}}"],
-      "prPriority": 5,
-      "groupName": "Gradle Wrapper"
+      "groupName": "kotlin major updates",
+      "prBodyNotes": ["Update Kotlin from {{{currentVersion}}} to {{{newVersion}}}"]
     }
   ],
+  "ignoreDeps": ["*"],
+  "prConcurrentLimit": 1,
+  "prHourlyLimit": 0,
   "assignees": [
     "fsanchezdev"
   ]
