@@ -27,6 +27,7 @@
   "semanticCommitScope": "{{parentDir}}",
   "separateMajorMinor": true,
   "enabledManagers": [
+    "gradle",
     "gradle-wrapper"
   ],
   "fileMatch": [
