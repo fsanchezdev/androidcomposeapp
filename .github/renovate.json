@@ -4,23 +4,17 @@
     "develop"
   ],
   "enabledManagers": [
-    "gradle"
-  ],
-  "fileMatch": [
-    "(^|/)gradle/wrapper/gradle-wrapper\\.properties$"
+    "github-actions"
   ],
   "ignoreDeps": ["*"],
   "packageRules": [
     {
       "description": "Only update Gradle Wrapper",
       "matchManagers": [
-        "gradle"
-      ],
-      "matchPackagePatterns": [
-        "^gradle$"
+        "github-actions"
       ],
       "enabled": true,
-      "prBodyNotes": ["Update Gradle Wrapper from {{{currentVersion}}} to {{{newVersion}}}"],
+      "prBodyNotes": ["Update Gradle  from {{{currentVersion}}} to {{{newVersion}}}"],
       "prPriority": 5,
       "groupName": "Gradle Wrapper"
     }
