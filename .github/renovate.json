@@ -3,18 +3,13 @@
   "baseBranches": [
     "develop"
   ],
-  "schedule": [
-    "before 4am on the first day of the month"
-  ],
-  "automergeStrategy": "merge-commit",
   "enabledManagers": [
     "gradle-wrapper"
   ],
-  "ignoreDeps": ["*"],
   "fileMatch": [
     "(^|/)gradle/wrapper/gradle-wrapper\\.properties$"
   ],
-  "versioning": "gradle",
+  "ignoreDeps": ["*"],
   "packageRules": [
     {
       "description": "Only update Gradle Wrapper",
@@ -24,25 +19,13 @@
       "matchPackagePatterns": [
         "^gradle$"
       ],
-      "enabled": true
-    },
-    {
-      "matchManagers": ["gradle"],
-      "enabled": false
-    },
-    {
-      "matchManagers": ["github-actions"],
-      "enabled": false
+      "enabled": true,
+      "prBodyNotes": ["Update Gradle Wrapper from {{{currentVersion}}} to {{{newVersion}}}"],
+      "prPriority": 5,
+      "groupName": "Gradle Wrapper"
     }
   ],
   "assignees": [
     "fsanchezdev"
-  ],
-  "semanticCommitScope": "{{parentDir}}",
-  "separateMajorMinor": true,
-  "extends": [
-    "config:base",
-    ":disableRateLimiting",
-    ":rebaseStalePrs"
   ]
 }
