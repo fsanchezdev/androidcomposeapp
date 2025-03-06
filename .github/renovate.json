@@ -28,8 +28,7 @@
       "matchPackagePatterns": [
         "^com.android.tools.build",
         "^com.android.application",
-        "^com.android.library",
-        "^gradle-wrapper"
+        "^com.android.library"
       ],
       "groupName": "gradle related dependencies"
     },
@@ -42,6 +41,16 @@
         "^androidx.compose.compiler"
       ],
       "groupName" : "kotlin related dependencies"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchManagers": ["gradle-wrapper"],
+      "matchPackagePatterns": [
+        "^gradle-wrapper"
+      ],
+      "groupName": "gradle wrapper",
+      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
     },
     {
       "automerge": false,
