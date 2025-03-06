@@ -28,11 +28,10 @@
       "matchPackagePatterns": [
         "^com.android.tools.build",
         "^com.android.application",
-        "^com.android.library"
+        "^com.android.library",
+        "^gradle-wrapper"
       ],
-      "groupName": "android-gradle-plugin",
-      "commitMessagePrefix": "AGP",
-      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
+      "groupName": "gradle related dependencies"
     },
     {
       "automerge": false,
