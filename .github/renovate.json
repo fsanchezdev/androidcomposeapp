@@ -46,6 +46,9 @@
       "automerge": false,
       "platformAutomerge": false,
       "matchManagers": ["gradle-wrapper"],
+      "matchPackagePatterns": [
+        "^gradle$"
+      ],
       "groupName": "gradle wrapper",
       "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
     },
