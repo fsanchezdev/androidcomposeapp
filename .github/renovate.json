@@ -1,34 +1,22 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "baseBranches": [
-    "develop"
-  ],
-  "enabledManagers": [
-    "gradle"
-  ],
+  "extends": ["config:base"],
+  "enabledManagers": ["gradle", "gradle-wrapper"],
   "packageRules": [
     {
-      "description": "Update Compose dependencies",
-      "matchPackagePatterns": [
-        "^androidx\\.compose\\.",
-        "^org\\.jetbrains\\.compose\\."
+      "matchPackageNames": [
+        "androidx.activity:activity-compose"
       ],
-      "matchUpdateTypes": [
-        "major",
-        "minor",
-        "patch"
+      "enabled": true
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "description": "Gradle Wrapper updates",
+      "matchManagers": [
+        "gradle-wrapper"
       ],
-      "enabled": true,
-      "groupName": "compose dependencies",
-      "prBodyNotes": ["Update Compose dependencies"],
-      "branchPrefix": "renovate/compose-",
-      "labels": ["compose-update"]
+      "groupName": "Gradle Wrapper",
+      "enabled": true
     }
-  ],
-  "ignoreDeps": ["*"],
-  "prConcurrentLimit": 1,
-  "prHourlyLimit": 0,
-  "assignees": [
-    "fsanchezdev"
   ]
 }
