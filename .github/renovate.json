@@ -20,7 +20,6 @@
         "pin",
         "digest"
       ],
-      "prPriority": 100,
       "groupName": "dependencies-minor-patch-digest"
     },
     {
@@ -47,10 +46,8 @@
       "automerge": false,
       "platformAutomerge": false,
       "matchManagers": ["gradle-wrapper"],
-      "matchPackagePatterns": [
-        "^gradle$"
-      ],
-      "prPriority": 0,
+ 
+      "groupName": "gradle wrapper",
       "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
     },
     {
