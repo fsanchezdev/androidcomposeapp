@@ -14,6 +14,15 @@
     {
       "automerge": false,
       "platformAutomerge": false,
+      "matchManagers": ["gradle-wrapper"],
+      "matchPackagePatterns": [
+        "^gradle$"
+      ],
+      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
       "matchUpdateTypes": [
         "minor",
         "patch",
@@ -41,15 +50,6 @@
         "^androidx.compose.compiler"
       ],
       "groupName" : "kotlin related dependencies"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
-      "matchManagers": ["gradle-wrapper"],
-      "matchPackagePatterns": [
-        "^gradle$"
-      ],
-      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
     },
     {
       "automerge": false,
