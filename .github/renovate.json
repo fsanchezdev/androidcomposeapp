@@ -45,6 +45,15 @@
     {
       "automerge": false,
       "platformAutomerge": false,
+      "matchManagers": ["gradle-wrapper"],
+      "matchPackagePatterns": [
+        "^gradle$"
+      ],
+      "groupName": "gradlsazdasdafsdgve wrapper"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
       "matchManagers": ["github-actions"],
       "groupName": "github-actions-workflows"
     }
