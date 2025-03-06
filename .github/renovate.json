@@ -57,6 +57,7 @@
     {
       "automerge": false,
       "platformAutomerge": false,
+      "matchManagers": ["github-actions"],
       "groupName": "github-actions-workflows"
     }
   ],
