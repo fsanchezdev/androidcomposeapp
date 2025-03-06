@@ -20,7 +20,7 @@
         "pin",
         "digest"
       ],
-      "prPriority": 0,
+      "prPriority": 100,
       "groupName": "dependencies-minor-patch-digest"
     },
     {
@@ -50,7 +50,7 @@
       "matchPackagePatterns": [
         "^gradle$"
       ],
-      "prPriority": 100,
+      "prPriority": 0,
       "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
     },
     {
