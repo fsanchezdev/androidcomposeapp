@@ -45,16 +45,6 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchManagers": ["gradle-wrapper"],
-      "matchPackagePatterns": [
-        "^gradle$"
-      ],
-      "groupName": "gradle wrapper",
-      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
       "matchManagers": ["github-actions"],
       "groupName": "github-actions-workflows"
     }
