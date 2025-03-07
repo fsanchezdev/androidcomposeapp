@@ -25,16 +25,6 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchPackagePatterns": [
-        "^com.android.tools.build",
-        "^com.android.application",
-        "^com.android.library"
-      ],
-      "groupName": "gradle related dependencies"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
       "matchPackagePatterns" : [
         "^org.jetbrains.kotlin",
         "^com.google.devtools.ksp",
@@ -46,9 +36,13 @@
       "automerge": false,
       "platformAutomerge": false,
       "matchManagers": ["gradle-wrapper"],
- 
-      "groupName": "gradle wrapper",
-      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
+      "matchPackagePatterns": [
+        "^com.android.tools.build",
+        "^com.android.application",
+        "^com.android.library",
+        "^gradle$"
+      ],
+      "groupName": "gradle related dependencies"
     },
     {
       "automerge": false,
