@@ -35,7 +35,6 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchManagers": ["gradle-wrapper"],
       "matchPackagePatterns": [
         "^com.android.tools.build",
         "^com.android.application",
