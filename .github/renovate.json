@@ -25,24 +25,23 @@
     {
       "automerge": false,
       "platformAutomerge": false,
-      "matchPackagePatterns": [
-        "^com.android.tools.build",
-        "^com.android.application",
-        "^com.android.library"
-      ],
-      "groupName": "android-gradle-plugin",
-      "commitMessagePrefix": "AGP",
-      "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}"
-    },
-    {
-      "automerge": false,
-      "platformAutomerge": false,
       "matchPackagePatterns" : [
         "^org.jetbrains.kotlin",
         "^com.google.devtools.ksp",
         "^androidx.compose.compiler"
       ],
       "groupName" : "kotlin related dependencies"
+    },
+    {
+      "automerge": false,
+      "platformAutomerge": false,
+      "matchPackagePatterns": [
+        "^com.android.tools.build",
+        "^com.android.application",
+        "^com.android.library",
+        "^gradle$"
+      ],
+      "groupName": "gradle related dependencies"
     },
     {
       "automerge": false,
