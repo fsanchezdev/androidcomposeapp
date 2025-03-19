@@ -11,6 +11,7 @@ plugins {
     id(libs.plugins.kotlinter.get().pluginId)
     id(libs.plugins.dagger.hilt.get().pluginId)
     id(libs.plugins.google.ksp.get().pluginId)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -47,6 +48,8 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // TODO remove after creating keystore.
+            signingConfig = signingConfigs.getByName("debug")
             // TODO: Uncomment after creating keystore.
             // signingConfig = signingConfigs.getByName("release")
         }
@@ -64,7 +67,6 @@ android {
         }
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler.get()
         useLiveLiterals = true
     }
     testOptions {
