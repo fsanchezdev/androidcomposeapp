@@ -27,9 +27,6 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = libs.findVersion(
-            "androidx.compose.compiler"
-        ).get().toString()
         useLiveLiterals = true
     }
     testOptions {
@@ -47,12 +44,6 @@ kotlin {
     jvmToolchain(libs.findVersion("java.sdk").get().toString().toInt())
     compilerOptions {
         allWarningsAsErrors.set(true)
-        freeCompilerArgs.addAll(
-            "-P",
-            "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=${project.layout.buildDirectory.get().asFile.absolutePath}/compose_metrics",
-            "-P",
-            "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=${project.layout.buildDirectory.get().asFile.absolutePath}/compose_reports"
-        )
     }
 }
 

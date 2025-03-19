@@ -4,9 +4,9 @@ android-compileSdk = "34"
 android-minSdk = "29"
 android-targetSdk = "34"
 java-sdk = "20"
+applicationId = "com.fsanchezdev.androidcomposeapp"
 nameSpace = "com.fsanchezdev.androidcomposeapp.app"
 nameSpaceData = "com.fsanchezdev.androidcomposeapp.datalayer"
-nameSpaceDomain = "com.fsanchezdev.androidcomposeapp.domainlayer"    #not used yet
 nameSpacePresentation = "com.fsanchezdev.androidcomposeapp.presentationlayer"
 
 androidx-activity = "1.9.0"
@@ -22,16 +22,16 @@ google-accompanist = "0.34.0"
 google-dagger = "2.51.1"
 google-glance-tooling = "0.2.2"
 #check java-sdk to have updated compoileOptions and kotlinOptions when kotlin is updated
-kotlin = "1.9.24"
+kotlin = "2.1.10"
 kotlinx-coroutines = "1.8.1"
 kotlinx-serialization = "1.6.3"
-plugin-android = "8.4.1"
+plugin-android = "8.9.0"
 plugin-dependencyUpdates = "0.51.0"
 plugin-google-firebase-appDistribution = "5.0.0"
 plugin-google-firebase-crashlytics = "3.0.1"
-plugin-google-ksp = "1.9.24-1.0.20"
+plugin-google-ksp = "2.1.10-1.0.31"
 plugin-google-services = "4.4.2"
-plugin-kotlinter = "4.3.0"
+plugin-kotlinter = "5.0.1"
 plugin-playPublisher = "3.9.1"
 square-moshi = "1.15.1"
 square-okhttp = "4.12.0"
@@ -63,6 +63,7 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 kotlinter = { id = "org.jmailen.kotlinter", version.ref = "plugin-kotlinter" }
 playPublisher = { id = "com.github.triplet.play", version.ref = "plugin-playPublisher" }
 square-sqldelight = { id = "com.squareup.sqldelight", version.ref = "square-sqlDelight" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 [libraries]
 #androidx
@@ -74,8 +75,6 @@ appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat"
 
 #compose
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-BOM" }
-    #used for kotlinCompiler
-androidx-composeCompiler = { module = "androidx.compose.compiler:compiler", version.ref = "androidx-compose-compiler" }
 
 #compose versions managed by bom
 androidx-composeAnimation = { module = "androidx.compose.animation:animation" }

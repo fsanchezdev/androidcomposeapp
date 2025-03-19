@@ -23,6 +23,9 @@ gen/
 .idea/kotlinc.xml
 .idea/ktlint-plugin.xml
 .idea/androidTestResultsUserPreferences.xml
+.idea/caches/deviceStreaming.xml
+.idea/deploymentTargetSelector.xml
+.idea/runConfigurations.xml
 
 #  Uncomment the following line in case you need and you don't have the release build type files in your app
 # release/

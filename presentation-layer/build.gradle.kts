@@ -2,15 +2,16 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     id(libs.plugins.dagger.hilt.get().pluginId)
+    alias(libs.plugins.compose.compiler)
     id("conventions.android")
 }
 
 android {
     namespace = libs.versions.nameSpacePresentation.get()
-    compileSdk = 34
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 29
+        minSdk = libs.versions.android.minSdk.get().toInt()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -32,6 +33,11 @@ android {
     kotlinOptions {
         jvmTarget = libs.versions.java.sdk.get()
     }
+}
+
+composeCompiler {
+    reportsDestination = layout.buildDirectory.dir("compose_compiler_metrics")
+    metricsDestination = layout.buildDirectory.dir("compose_compiler_metrics")
 }
 
 hilt {
